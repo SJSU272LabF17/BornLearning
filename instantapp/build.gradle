@@ -4,3 +4,7 @@ dependencies {
     implementation project(':data')
     implementation project(':base')
 }
+
+android {
+    compileSdkVersion 26
+}
