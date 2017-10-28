@@ -1,1 +1,1 @@
-include ':data', ':app', ':base', ':instantapp'
+include ':profile', ':app', ':base', ':instantapp'

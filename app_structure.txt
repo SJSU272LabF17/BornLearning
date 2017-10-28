@@ -1,0 +1,7 @@
+Top Level
+	Display Add profile button
+	Display Search profile
+	
+Detail/Edit Level
+	View profile's vitals
+	Add vitals record
