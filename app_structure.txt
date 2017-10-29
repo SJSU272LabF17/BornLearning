@@ -1,6 +1,10 @@
 Top Level
+	Display user button (not in scope)
+	Display profile button
+
+Category Level
 	Display Add profile button
-	Display Search profile
+	Display Search profile view
 	
 Detail/Edit Level
 	View profile's vitals
