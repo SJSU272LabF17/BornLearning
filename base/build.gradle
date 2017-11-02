@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.2"
     baseFeature true
     defaultConfig {
-        minSdkVersion 24
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -22,5 +22,6 @@ dependencies {
     api 'com.android.support:appcompat-v7:26.1.0'
     api 'com.android.support.constraint:constraint-layout:1.0.2'
     application project(':app')
-    feature project(':data')
+    feature project(':bornlearning')
+    feature project(":schoolreadiness")
 }
