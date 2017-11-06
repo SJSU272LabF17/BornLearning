@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.DevelopmentActivity">
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileActivity">
+
+    <include
+        layout="@layout/toolbar_children_profile"
+        android:id="@+id/children_profile_toolbar" />
 
     <fragment
-        android:id="@+id/fragment_development"
-        android:name="com.grp15.cmpe272.unitedwayapp.bornlearning.development.DevelopmentFragment"
+        android:id="@+id/fragment_children_profile"
+        android:name="com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
 
 </android.support.constraint.ConstraintLayout>

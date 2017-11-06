@@ -7,27 +7,27 @@
 
 
     <Spinner
-        android:id="@+id/center_selection_spinner"
+        android:id="@+id/spinner_main_center_selection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/main_button_edge_margin"
-        android:layout_marginTop="@dimen/top_button_top_margin"
-        android:contentDescription="@string/select_center"/>
+        android:layout_marginTop="@dimen/top_element_margin"
+        android:contentDescription="@string/spinner_main_center_selection"/>
 
     <Button
-        android:id="@+id/take_assessment_button"
+        android:id="@+id/button_main_take_assessment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/between_buttons_margin"
         android:layout_marginHorizontal="@dimen/main_button_edge_margin"
-        android:text="@string/take_assessment" />
+        android:text="@string/button_main_take_assessment" />
 
     <Button
-        android:id="@+id/view_history_button"
+        android:id="@+id/button_main_view_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/main_button_edge_margin"
         android:layout_marginTop="@dimen/between_buttons_margin"
-        android:text="@string/view_history" />
+        android:text="@string/button_main_view_history" />
 
 </LinearLayout>

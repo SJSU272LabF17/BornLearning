@@ -1,6 +1,7 @@
 package com.grp15.cmpe272.unitedwayapp.bornlearning
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
+import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileActivity
 import java.util.*
 
 
@@ -22,14 +24,14 @@ class MainFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         var view : View = inflater.inflate(R.layout.fragment_main, container, false)
 
-        centerSelectionSpinner = view.findViewById(R.id.center_selection_spinner)
+        centerSelectionSpinner = view.findViewById(R.id.spinner_main_center_selection)
 
         initializeSelectCenterSpinner()
 
-        var takeAssessmentButton : Button = view.findViewById(R.id.take_assessment_button)
+        var takeAssessmentButton : Button = view.findViewById(R.id.button_main_take_assessment)
         takeAssessmentButton.setOnClickListener { takeAssessment(it) }
 
-        var viewHistory : Button = view.findViewById(R.id.view_history_button)
+        var viewHistory : Button = view.findViewById(R.id.button_main_view_history)
         viewHistory.setOnClickListener { viewHistory(it) }
 
         // Inflate the layout for this fragment
@@ -38,7 +40,9 @@ class MainFragment : Fragment() {
 
     fun takeAssessment(view : View) {
         // TODO: set intent as assessment and open Development Activity
+        val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
         Toast.makeText(this.activity, "Take Assessment", Toast.LENGTH_SHORT).show()
+        startActivity(intent)
     }
 
     fun viewHistory(view : View) {
