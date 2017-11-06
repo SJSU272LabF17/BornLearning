@@ -1,0 +1,35 @@
+<resources>
+    <!-- Follow naming convention
+         <viewType>_<filename_without_prefix>_<desired_name>
+         e.g.
+         filename: activity_main.xml
+         viewType: Button
+         desiredName: take_assessment
+
+         name="button_main_take_assessment"
+    -->
+
+    <!-- general -->
+    <string name="children_profile">Children Profile</string>
+
+    <!-- main -->
+    <string name="button_main_take_assessment">Take Assessment</string>
+    <string name="button_main_view_history">View History</string>
+    <string name="spinner_main_center_selection">Select Center</string>
+
+    <!-- development -->
+    <string name="textview_development_center_name_value">Center Name</string>
+    <string name="textview_development_child_name_value">Child Name</string>
+    <string name="textview_development_center_title">Center:</string>
+    <string name="textview_development_child_name_title">Child:</string>
+    <string name="textview_development_phone_number">Phone Number:</string>
+    <string name="textview_development_phone_number_value">Child Phone Number</string>
+    <string name="button_development_school_readiness">School Readiness</string>
+
+    <!-- Children Profile -->
+    <string name="item_children_profile_add_child_profile">Add Child Profile</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

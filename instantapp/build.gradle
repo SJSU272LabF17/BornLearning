@@ -1,7 +1,7 @@
 apply plugin: 'com.android.instantapp'
 
 dependencies {
-    implementation project(':profile')
+    implementation project(':bornlearning')
     implementation project(':base')
 }
 
