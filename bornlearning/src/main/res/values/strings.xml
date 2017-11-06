@@ -26,6 +26,10 @@
     <string name="textview_development_phone_number_value">Child Phone Number</string>
     <string name="button_development_school_readiness">School Readiness</string>
 
+    <!-- Children Profile -->
+    <string name="item_children_profile_add_child_profile">Add Child Profile</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
