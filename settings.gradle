@@ -1,1 +1,1 @@
-include ':bornlearning', ':app', ':base', ':instantapp', ':schoolreadiness'
+include ':bornlearning', ':app', ':base', ':instantapp'

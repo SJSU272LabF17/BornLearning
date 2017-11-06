@@ -7,17 +7,11 @@
     android:layout_height="match_parent"
     tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.MainActivity">
 
-    <Button
-        android:id="@+id/school_readiness_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/main_button_edge_margin"
-        android:layout_marginStart="@dimen/main_button_edge_margin"
-        android:layout_marginTop="@dimen/top_button_top_margin"
-        android:text="@string/school_readiness_button"
-        android:onClick="openSchoolReadiness"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <fragment
+        android:id="@+id/fragment_main"
+        android:name="com.grp15.cmpe272.unitedwayapp.bornlearning.MainFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"/>
 
 </android.support.constraint.ConstraintLayout>

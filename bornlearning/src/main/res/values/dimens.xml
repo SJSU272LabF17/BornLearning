@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="top_button_top_margin">100dp</dimen>
     <dimen name="main_button_edge_margin">50dp</dimen>
+    <dimen name="top_button_top_margin">100dp</dimen>
+    <dimen name="bottom_button_bottom_margin">100dp</dimen>
+
+    <!-- main -->
+    <dimen name="between_buttons_margin">20dp</dimen>
+
 </resources>

@@ -17,9 +17,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openSchoolReadiness(view : View) : Boolean {
-        val intent = Intent(this,
-                com.pixelconic.schoolreadiness.SchoolReadinessActivity::class.java)
-        startActivity(intent)
+//        val intent = Intent(this,
+//                com.pixelconic.schoolreadiness.SchoolReadinessActivity::class.java)
+//        startActivity(intent)
         return true
     }
 }
