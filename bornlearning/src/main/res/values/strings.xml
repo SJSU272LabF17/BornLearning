@@ -19,12 +19,16 @@
 
     <!-- development -->
     <string name="textview_development_center_name_value">Center Name</string>
-    <string name="textview_development_child_name_value">Child Name</string>
     <string name="textview_development_center_title">Center:</string>
-    <string name="textview_development_child_name_title">Child:</string>
-    <string name="textview_development_phone_number">Phone Number:</string>
-    <string name="textview_development_phone_number_value">Child Phone Number</string>
+    <string name="textview_development_sevika_name_value">Sevika Name</string>
+    <string name="textview_development_sevika_name_title">Sevika:</string>
+    <string name="textview_development_phone_number_title">Phone Number:</string>
+    <string name="textview_development_phone_number_value">Phone Number</string>
     <string name="button_development_school_readiness">School Readiness</string>
+
+    <!-- School Readiness-->
+    <string name="button_social_and_emotional">Social and Emotional</string>
+
 
     <!-- Children Profile -->
     <string name="item_children_profile_add_child_profile">Add Child Profile</string>

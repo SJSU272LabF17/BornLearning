@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.schoolreadiness.SchoolReadinessFragment">
+
+
+    <Button
+        android:id="@+id/button_social_and_emotional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_marginTop="@dimen/top_element_margin"
+        android:text="@string/button_social_and_emotional" />
+
+</LinearLayout>
