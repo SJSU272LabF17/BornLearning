@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
-import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileActivity
+import com.grp15.cmpe272.unitedwayapp.bornlearning.development.DevelopmentActivity
 import java.util.*
 
 
@@ -40,7 +40,7 @@ class MainFragment : Fragment() {
 
     fun takeAssessment(view : View) {
         // TODO: set intent as assessment and open Development Activity
-        val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
+        val intent = Intent(this.activity, DevelopmentActivity::class.java)
         Toast.makeText(this.activity, "Take Assessment", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }

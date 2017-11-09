@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileFragment">
 
     <TextView
@@ -9,5 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/textview_development_center_name_value" />
+
+    <Button
+        android:id="@+id/button_place_holder_take_assessment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PLACE HOLDER TAKE ASSESSMENT"
+        android:layout_margin="@dimen/main_button_edge_margin"
+        app:layout_constraintTop_toBottomOf="@id/textview_children_profile_center_name_value" />
 
 </android.support.constraint.ConstraintLayout>
