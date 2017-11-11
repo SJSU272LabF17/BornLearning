@@ -36,10 +36,9 @@ class ChildrenProfileFragment : Fragment() {
     }
 
     fun takeAssessment(view : View, bundle : Bundle) {
-        val intent = Intent(this.activity, AssessmentActivity::class.java)
+        val intent = Intent(this.activity, QuestionImplementationActivity::class.java)
         intent.putExtra("data", bundle)
         Toast.makeText(this.activity, "Taking assessment", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }
-
 }
