@@ -28,7 +28,10 @@
 
     <!-- School Readiness-->
     <string name="button_social_and_emotional">Social and Emotional</string>
-
+    <string name="button_language_and_communication">Language and Communication</string>
+    <string name="button_cognitive">Cognitive</string>
+    <string name="button_movement_and_physical_development">Movement and Physical Development</string>
+    <string name="button_physical_wellbeing">Physical Wellbeing</string>
 
     <!-- Children Profile -->
     <string name="item_children_profile_add_child_profile">Add Child Profile</string>

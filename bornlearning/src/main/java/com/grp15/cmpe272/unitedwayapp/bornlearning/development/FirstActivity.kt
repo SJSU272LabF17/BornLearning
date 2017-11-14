@@ -3,7 +3,9 @@ package com.grp15.cmpe272.unitedwayapp.bornlearning.development
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
-import kotlinx.android.synthetic.main.fragment_first.*
+import android.content.Intent
+import android.widget.TextView
+//import kotlinx.android.synthetic.main.fragment_main.*
 
 
 /**

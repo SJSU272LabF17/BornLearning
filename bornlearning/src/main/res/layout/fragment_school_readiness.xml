@@ -15,4 +15,36 @@
         android:layout_marginTop="@dimen/top_element_margin"
         android:text="@string/button_social_and_emotional" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/button_language_and_communication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_marginTop="@dimen/between_buttons_margin"
+        android:text="@string/button_language_and_communication" />
+
+    <Button
+        android:id="@+id/button_cognitive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_marginTop="@dimen/between_buttons_margin"
+        android:text="@string/button_cognitive" />
+
+    <Button
+        android:id="@+id/button_movement_and_physical_development"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_marginTop="@dimen/between_buttons_margin"
+        android:text="@string/button_movement_and_physical_development" />
+
+    <Button
+        android:id="@+id/button_physical_wellbeing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_marginTop="@dimen/between_buttons_margin"
+        android:text="@string/button_physical_wellbeing" />
+
+   </LinearLayout>
