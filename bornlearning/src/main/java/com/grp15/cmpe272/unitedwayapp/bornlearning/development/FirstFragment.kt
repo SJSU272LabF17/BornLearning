@@ -1,5 +1,4 @@
-package com.grp15.cmpe272.unitedwayapp.bornlearning
-
+package com.grp15.cmpe272.unitedwayapp.bornlearning.development
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,16 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import android.widget.AdapterView.OnItemSelectedListener
-import com.grp15.cmpe272.unitedwayapp.bornlearning.development.DevelopmentActivity
-import com.grp15.cmpe272.unitedwayapp.bornlearning.development.LoginActivity
+import com.grp15.cmpe272.unitedwayapp.bornlearning.R
 import java.util.*
 
-
 /**
- * A simple [Fragment] subclass.
+ * Created by amita on 11/9/2017.
  */
-class MainFragment : Fragment() {
+class FirstFragment: Fragment() {
 
     lateinit var centerSelectionSpinner : Spinner
 
@@ -65,7 +61,7 @@ class MainFragment : Fragment() {
         centerSelectionSpinner.adapter = ArrayAdapter<String>(this.activity,
                 android.R.layout.simple_list_item_1, centerNames)
 
-        centerSelectionSpinner.onItemSelectedListener = object : OnItemSelectedListener {
+        centerSelectionSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
@@ -75,5 +71,4 @@ class MainFragment : Fragment() {
             }
         }
     }
-
 }
