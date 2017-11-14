@@ -19,6 +19,10 @@ import java.util.*
  */
 class MainFragment : Fragment() {
 
+    companion object {
+        val USER_ID = ""
+    }
+
     lateinit var centerSelectionSpinner : Spinner
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

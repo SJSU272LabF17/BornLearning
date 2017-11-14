@@ -25,28 +25,25 @@ class LoginFragment : Fragment() {
     //var login_id:String="";
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        var view : View = inflater.inflate(R.layout.login, container, false)
+        var view: View = inflater.inflate(R.layout.login, container, false)
 
 
-        var UW_sid:EditText  = view.findViewById(R.id.txt_sid)
+        var uwSid: EditText  = view.findViewById(R.id.txt_sid)
 
-        //var login_id=UW_sid.txt_sid.getText()
-        //takeAssessmentButton.setOnClickListener { login(it) }
 
         var takeAssessmentButton : Button = view.findViewById(R.id.button_main_take_assessment)
-        takeAssessmentButton.setOnClickListener { login(it,UW_sid) }
+        takeAssessmentButton.setOnClickListener { login(it, uwSid) }
 
         return view
     }
 
 
-    fun login(view : View,id:EditText) {
+    fun login(view: View, id: EditText) {
         // TODO: set intent as assessment and open Development Activity
         val intent = Intent(this.activity, FirstActivity::class.java)
 
-        intent.putExtra("fname", id.text);
-        //intent.putExtra("lname", etLName.getText().toString());
-        Toast.makeText(this.activity, "Take Assessment:"+id.text, Toast.LENGTH_SHORT).show()
+        intent.putExtra("fname", id.text)
+        Toast.makeText(this.activity, "Logging in: " + id.text, Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }
 }

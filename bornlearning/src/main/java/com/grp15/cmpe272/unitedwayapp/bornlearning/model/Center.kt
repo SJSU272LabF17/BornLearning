@@ -1,16 +1,10 @@
 package com.grp15.cmpe272.unitedwayapp.bornlearning.model
 
-import android.arch.persistence.room.ColumnInfo
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.PrimaryKey
-
 /**
  * Represents Center entity.
  */
-@Entity(tableName = "Centers")
 data class Center(
 
-    @PrimaryKey(autoGenerate = true)
     var centerId: Int = 0,
 
     var centerName: String? = null,
@@ -31,10 +25,8 @@ data class Center(
 
     var sevikaPhone: String? = null,
 
-    @ColumnInfo(name = "FacilitatorId")
     var facilitatorId: Int? = null,
 
-    @ColumnInfo(name = "geolocation")
     var geoLocation: String? = null
 ) {
 }
