@@ -7,27 +7,27 @@ import java.io.Serializable
  */
 data class Center(
 
-    var centerId: Int = 0,
+    var centerId: Int,
 
-    var centerName: String? = null,
+    var centerName: String,
 
     var centerAddress: String? = null,
 
-    var pincode: Double? = null,
+    var pincode: Int,
 
-    var type: String? = null,
+    var type: String,
 
-    var chapter: String? = null,
+    var chapter: String,
 
-    var city: String? = null,
+    var city: String,
 
-    var district: String? = null,
+    var district: String,
 
-    var sevika: String? = null,
+    var sevika: String,
 
-    var sevikaPhone: String? = null,
+    var sevikaPhone: String,
 
-    var facilitatorId: Int? = null,
+    var facilitatorId: Int,
 
     var geoLocation: String? = null
 ) : Serializable {
