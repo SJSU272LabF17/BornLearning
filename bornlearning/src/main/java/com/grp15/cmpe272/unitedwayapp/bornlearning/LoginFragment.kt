@@ -1,4 +1,4 @@
-package com.grp15.cmpe272.unitedwayapp.bornlearning.development
+package com.grp15.cmpe272.unitedwayapp.bornlearning
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,13 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import com.grp15.cmpe272.unitedwayapp.bornlearning.R
-import com.grp15.cmpe272.unitedwayapp.bornlearning.development.schoolreadiness.SchoolReadinessActivity
-import kotlinx.android.synthetic.main.login.view.*
-import android.content.Intent.getIntent
-
+import com.grp15.cmpe272.unitedwayapp.bornlearning.development.FirstActivity
+import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Facilitator
+import java.io.Serializable
 
 
 /**
@@ -25,10 +22,10 @@ class LoginFragment : Fragment() {
     //var login_id:String="";
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        var view: View = inflater.inflate(R.layout.login, container, false)
+        var view: View = inflater.inflate(R.layout.fragment_login, container, false)
 
 
-        var uwSid: EditText  = view.findViewById(R.id.txt_sid)
+        var uwSid: EditText  = view.findViewById(R.id.edit_text_facilitator_id)
 
 
         var takeAssessmentButton : Button = view.findViewById(R.id.button_main_take_assessment)
@@ -39,10 +36,12 @@ class LoginFragment : Fragment() {
 
 
     fun login(view: View, id: EditText) {
-        // TODO: set intent as assessment and open Development Activity
         val intent = Intent(this.activity, FirstActivity::class.java)
 
         intent.putExtra("fname", id.text)
+        var facilitator: Facilitator = Facilitator(id.text.toString().toInt(), "Madhur", "650-111-2234")
+
+        intent.putExtra(Facilitator.toString(), facilitator as Serializable)
         Toast.makeText(this.activity, "Logging in: " + id.text, Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }

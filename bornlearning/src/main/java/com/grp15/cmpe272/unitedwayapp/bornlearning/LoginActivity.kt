@@ -1,4 +1,4 @@
-package com.grp15.cmpe272.unitedwayapp.bornlearning.development
+package com.grp15.cmpe272.unitedwayapp.bornlearning
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

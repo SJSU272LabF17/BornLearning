@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.LoginActivity">
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.LoginActivity">
 
     <LinearLayout
         android:id="@+id/linearlayout_development_center_info"
