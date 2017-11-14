@@ -9,9 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import com.grp15.cmpe272.unitedwayapp.bornlearning.Constants
 
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
 import com.grp15.cmpe272.unitedwayapp.bornlearning.development.schoolreadiness.SchoolReadinessActivity
+import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileActivity
 
 
 /**
@@ -38,20 +40,20 @@ class DevelopmentFragment : Fragment() {
 
 
     fun openSubCategory(view : View) {
-        val intent = Intent(this.activity, SchoolReadinessActivity::class.java)
-        Toast.makeText(this.activity, "Sub-category", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
+        intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.SCHOOL_READINESS.name)
         startActivity(intent)
     }
 
     fun openInfrastructureCategory(view : View) {
-        val intent = Intent(this.activity, InfrastructureActivity::class.java)
-        Toast.makeText(this.activity, "Sub-category", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
+        intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.INFRASTRUCTURE.name)
         startActivity(intent)
     }
 
     fun openCommunityReadinesCategory(view : View) {
-        val intent = Intent(this.activity, CommunityReadinessActivity::class.java)
-        Toast.makeText(this.activity, "Sub-category", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
+        intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.COMMUNITY_READINESS.name)
         startActivity(intent)
     }
 

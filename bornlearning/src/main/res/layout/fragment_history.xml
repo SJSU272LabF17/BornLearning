@@ -5,6 +5,12 @@
     android:background="@color/bornLearningMain"
     tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.HistoryFragment">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/born_learning_banner"/>
+
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"

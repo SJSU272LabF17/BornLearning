@@ -1,23 +1,39 @@
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/bornLearningMain"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/born_learning_banner"/>
 
     <TextView
         android:id="@+id/textview_children_profile_center_name_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:text="@string/textview_development_center_name_value" />
+
 
     <Button
         android:id="@+id/button_place_holder_take_assessment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PLACE HOLDER TAKE ASSESSMENT"
-        android:layout_margin="@dimen/main_button_edge_margin"
-        app:layout_constraintTop_toBottomOf="@id/textview_children_profile_center_name_value" />
+        android:text="PLACE HOLDER TAKE ASSESSMENT"/>
 
-</android.support.constraint.ConstraintLayout>
+    <ListView
+        android:layout_marginTop="50dp"
+        android:id="@+id/listview_children_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
+
+
+</LinearLayout>
