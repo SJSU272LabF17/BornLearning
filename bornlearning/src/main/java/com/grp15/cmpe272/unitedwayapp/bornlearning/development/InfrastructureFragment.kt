@@ -1,4 +1,4 @@
-package com.grp15.cmpe272.unitedwayapp.bornlearning.development.schoolreadiness
+package com.grp15.cmpe272.unitedwayapp.bornlearning.development
 
 
 import android.content.Intent
@@ -11,35 +11,31 @@ import android.widget.Button
 import android.widget.Toast
 
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
-import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileActivity
 import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.QuestionImplementationActivity
 
 
 /**
- * School Readiness fragment to manage its sub-categories.
+ * A simple [Fragment] subclass.
  */
-class SchoolReadinessFragment : Fragment() {
+class InfrastructureFragment : Fragment() {
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        var view = inflater.inflate(R.layout.fragment_school_readiness, container, false)
 
-        var socialAndEmotionalButton : Button = view.findViewById(R.id.button_social_and_emotional)
-        socialAndEmotionalButton.setOnClickListener{ openChildrenProfile(it) }
+        var view = inflater.inflate(R.layout.fragment_infrastructure, container, false)
 
-        var languageAndCommunication : Button = view.findViewById(R.id.button_language_and_communication)
-        languageAndCommunication.setOnClickListener{ openChildrenProfile(it) }
-
-        var CognitiveButton : Button = view.findViewById(R.id.button_cognitive)
+        var CognitiveButton : Button = view.findViewById(R.id.button_building_infrastracture)
         CognitiveButton.setOnClickListener{ openChildrenProfile(it) }
 
-        var movementAndPhysicalDevelopmentButton : Button = view.findViewById(R.id.button_movement_and_physical_development)
+        var movementAndPhysicalDevelopmentButton : Button = view.findViewById(R.id.button_portable_infrastructure)
         movementAndPhysicalDevelopmentButton.setOnClickListener{ openChildrenProfile(it) }
 
-        var PhysicalWellbeingButton : Button = view.findViewById(R.id.button_physical_wellbeing)
+        var PhysicalWellbeingButton : Button = view.findViewById(R.id.button_educational_materials)
         PhysicalWellbeingButton.setOnClickListener{ openChildrenProfile(it) }
+
         // Inflate the layout for this fragment
-        return view
+        return view;
     }
 
     /**
@@ -51,4 +47,4 @@ class SchoolReadinessFragment : Fragment() {
         startActivity(intent)
     }
 
-}
+}// Required empty public constructor
