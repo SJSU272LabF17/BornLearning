@@ -33,7 +33,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearlayout_development_child_info"
+        android:id="@+id/linearlayout_development_sevika_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/between_buttons_margin"
@@ -41,16 +41,44 @@
         app:layout_constraintTop_toTopOf="@+id/linearlayout_development_center_info">
 
         <TextView
-            android:id="@+id/textview_development_child_name_title"
+            android:id="@+id/textview_development_sevika_name_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_weight="2"
             android:gravity="start"
-            android:text="@string/textview_development_sevika_name_title" />
+            android:text="Sevika Name:" />
 
         <TextView
-            android:id="@+id/textview_development_child_name_value"
+            android:id="@+id/textview_development_sevika_name_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="@string/textview_development_sevika_name_value" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_development_sebika_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@+id/linearlayout_development_center_info">
+
+        <TextView
+            android:id="@+id/textview_development_sevika_contact_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="2"
+            android:gravity="start"
+            android:text="Phone Number:" />
+
+        <TextView
+            android:id="@+id/textview_development_sevika_contact_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -65,8 +93,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/between_buttons_margin"
-        app:layout_constraintTop_toBottomOf="@+id/linearlayout_development_child_info"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_development_sevika_info"
         android:text="@string/button_development_school_readiness" />
+
+    <Button
+        android:id="@+id/button_infrastructure_development"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/between_buttons_margin"
+        app:layout_constraintTop_toBottomOf="@+id/button_school_readiness"
+        android:text="Infrastructure Development" />
+
+    <Button
+        android:id="@+id/button_community_readiness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/between_buttons_margin"
+        app:layout_constraintTop_toBottomOf="@+id/button_infrastructure_development"
+        android:text="Community Readiness" />
 
 
 </android.support.constraint.ConstraintLayout>

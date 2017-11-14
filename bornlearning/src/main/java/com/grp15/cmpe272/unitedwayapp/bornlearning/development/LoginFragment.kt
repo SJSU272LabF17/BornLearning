@@ -29,10 +29,6 @@ class LoginFragment : Fragment() {
 
 
         var UW_sid:EditText  = view.findViewById(R.id.txt_sid)
-
-        //var login_id=UW_sid.txt_sid.getText()
-        //takeAssessmentButton.setOnClickListener { login(it) }
-
         var takeAssessmentButton : Button = view.findViewById(R.id.button_main_take_assessment)
         takeAssessmentButton.setOnClickListener { login(it,UW_sid) }
 
@@ -45,7 +41,6 @@ class LoginFragment : Fragment() {
         val intent = Intent(this.activity, FirstActivity::class.java)
 
         intent.putExtra("fname", id.text);
-        //intent.putExtra("lname", etLName.getText().toString());
         Toast.makeText(this.activity, "Take Assessment:"+id.text, Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }
