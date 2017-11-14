@@ -1,5 +1,7 @@
 package com.grp15.cmpe272.unitedwayapp.bornlearning.model
 
+import java.io.Serializable
+
 /**
  * Represents Center entity.
  */
@@ -28,5 +30,5 @@ data class Center(
     var facilitatorId: Int? = null,
 
     var geoLocation: String? = null
-) {
+) : Serializable {
 }
