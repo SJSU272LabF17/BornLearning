@@ -3,16 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.MainFragment">
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.LoginFragment">
 
 
-    <Spinner
+    <!--<Spinner
         android:id="@+id/spinner_main_center_selection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/main_button_edge_margin"
         android:layout_marginTop="@dimen/top_element_margin"
-        android:contentDescription="@string/spinner_main_center_selection"/>
+        android:contentDescription="@string/spinner_main_center_selection"/>-->
+
+    <TextView
+        android:id="@+id/txt_main_take_assessment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UW Facilitator ID"
+        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_marginTop="@dimen/top_element_margin"/>
+
+    <EditText
+        android:id="@+id/txt_sid"
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/main_button_edge_margin"/>
+
 
     <Button
         android:id="@+id/button_main_take_assessment"
@@ -20,20 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/between_buttons_margin"
         android:layout_marginHorizontal="@dimen/main_button_edge_margin"
-        android:text="@string/button_main_take_assessment" />
+        android:text="@string/button_login" />
 
-    <Button
-        android:id="@+id/button_main_view_history"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
-        android:layout_marginTop="@dimen/between_buttons_margin"
-        android:text="@string/button_main_view_history" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
 
 </LinearLayout>
