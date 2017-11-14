@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:background="@color/bornLearningMain"
         android:backgroundTint="@color/bornLearningMain"
+        android:popupBackground="@color/bornLearningMain"
         android:layout_marginHorizontal="@dimen/main_button_edge_margin"
         android:layout_marginTop="@dimen/between_buttons_margin"
         android:contentDescription="@string/spinner_main_center_selection"/>
