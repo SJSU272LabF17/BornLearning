@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.LoginActivity">
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.LoginActivity">
 
     <LinearLayout
         android:id="@+id/linearlayout_development_center_info"
@@ -84,7 +84,7 @@
             android:layout_gravity="start"
             android:layout_weight="1"
             android:gravity="start"
-            android:text="@string/textview_development_sevika_name_value" />
+            android:text="Phone Number" />
 
     </LinearLayout>
 

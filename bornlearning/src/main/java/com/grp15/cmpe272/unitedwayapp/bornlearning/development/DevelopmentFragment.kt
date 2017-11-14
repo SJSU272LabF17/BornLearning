@@ -26,6 +26,12 @@ class DevelopmentFragment : Fragment() {
 
         var subCategoryButton : Button = view.findViewById(R.id.button_school_readiness)
         subCategoryButton.setOnClickListener{ openSubCategory(it) }
+
+        var infrastructureDevelopmentButton : Button = view.findViewById(R.id.button_infrastructure_development)
+        infrastructureDevelopmentButton.setOnClickListener{ openInfrastructureCategory(it) }
+
+        var communityReadinessButton : Button = view.findViewById(R.id.button_community_readiness)
+        communityReadinessButton.setOnClickListener{ openCommunityReadinesCategory(it) }
         // Inflate the layout for this fragment
         return view
     }
@@ -33,6 +39,18 @@ class DevelopmentFragment : Fragment() {
 
     fun openSubCategory(view : View) {
         val intent = Intent(this.activity, SchoolReadinessActivity::class.java)
+        Toast.makeText(this.activity, "Sub-category", Toast.LENGTH_SHORT).show()
+        startActivity(intent)
+    }
+
+    fun openInfrastructureCategory(view : View) {
+        val intent = Intent(this.activity, InfrastructureActivity::class.java)
+        Toast.makeText(this.activity, "Sub-category", Toast.LENGTH_SHORT).show()
+        startActivity(intent)
+    }
+
+    fun openCommunityReadinesCategory(view : View) {
+        val intent = Intent(this.activity, CommunityReadinessActivity::class.java)
         Toast.makeText(this.activity, "Sub-category", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }

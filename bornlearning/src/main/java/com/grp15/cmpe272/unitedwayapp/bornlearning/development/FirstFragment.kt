@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
+import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Facilitator
 import java.util.*
 
 /**
@@ -17,9 +18,11 @@ class FirstFragment: Fragment() {
 
     lateinit var centerSelectionSpinner : Spinner
 
+    lateinit var facilitator: Facilitator
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        var view : View = inflater.inflate(R.layout.fragment_main, container, false)
+        var view : View = inflater.inflate(R.layout.fragment_first, container, false)
 
         centerSelectionSpinner = view.findViewById(R.id.spinner_main_center_selection)
 
@@ -31,6 +34,10 @@ class FirstFragment: Fragment() {
         var viewHistory : Button = view.findViewById(R.id.button_main_view_history)
         viewHistory.setOnClickListener { viewHistory(it) }
 
+        facilitator = activity?.intent?.getSerializableExtra(Facilitator.toString()) as Facilitator
+
+        var facilitatorTextView: TextView = view.findViewById(R.id.text_main_facilitator_id)
+        facilitatorTextView.setText(facilitator.facilitatorId.toString())
         // Inflate the layout for this fragment
         return view
     }

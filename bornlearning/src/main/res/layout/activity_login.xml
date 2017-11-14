@@ -5,13 +5,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.LoginActivity">
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.LoginActivity">
 
     <fragment
         android:id="@+id/fragment_login"
-        android:name="com.grp15.cmpe272.unitedwayapp.bornlearning.development.LoginFragment"
+        android:name="com.grp15.cmpe272.unitedwayapp.bornlearning.LoginFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".development.LoginActivity"/>
+        tools:context=".LoginActivity"/>
 
 </android.support.constraint.ConstraintLayout>
