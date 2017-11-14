@@ -7,4 +7,9 @@
     <!-- main -->
     <dimen name="between_buttons_margin">20dp</dimen>
 
+    <!-- text -->
+    <dimen name="small_general">12dp</dimen>
+    <dimen name="medium_general">14dp</dimen>
+    <dimen name="large_general">18dp</dimen>
+
 </resources>
