@@ -67,7 +67,9 @@ class ChildrenProfileFragment : Fragment() {
             Constants.DevelopmentType.INFRASTRUCTURE.name ->
                 intent = Intent(this.activity, InfrastructureActivity::class.java)
             Constants.DevelopmentType.COMMUNITY_READINESS.name ->
-                intent = Intent(this.activity, CommunityReadinessActivity::class.java)
+                // community readiness currently doesn't have a subcategory so it
+                // goes directly to the question view
+                intent = Intent(this.activity, QuestionImplementationActivity::class.java)
         }
 
         intent.putExtra("data", bundle)

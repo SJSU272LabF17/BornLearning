@@ -8,11 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import com.grp15.cmpe272.unitedwayapp.bornlearning.Constants
 
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
-import com.grp15.cmpe272.unitedwayapp.bornlearning.development.schoolreadiness.SchoolReadinessActivity
 import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileActivity
 
 
@@ -33,7 +31,7 @@ class DevelopmentFragment : Fragment() {
         infrastructureDevelopmentButton.setOnClickListener{ openInfrastructureCategory(it) }
 
         var communityReadinessButton : Button = view.findViewById(R.id.button_community_readiness)
-        communityReadinessButton.setOnClickListener{ openCommunityReadinesCategory(it) }
+        communityReadinessButton.setOnClickListener{ openCommunityReadinessCategory(it) }
         // Inflate the layout for this fragment
         return view
     }
@@ -51,7 +49,7 @@ class DevelopmentFragment : Fragment() {
         startActivity(intent)
     }
 
-    fun openCommunityReadinesCategory(view : View) {
+    fun openCommunityReadinessCategory(view : View) {
         val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
         intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.COMMUNITY_READINESS.name)
         startActivity(intent)

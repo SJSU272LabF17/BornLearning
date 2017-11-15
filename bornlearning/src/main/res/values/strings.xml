@@ -42,4 +42,7 @@
 
     <string name="button_login">Login</string>
 
+    <!-- Question implementation -->
+    <string name="button_question_implementation_submit">Submit</string>
+
 </resources>
