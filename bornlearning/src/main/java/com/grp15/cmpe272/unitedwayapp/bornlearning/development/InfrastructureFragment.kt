@@ -43,7 +43,6 @@ class InfrastructureFragment : Fragment() {
      */
     fun openChildrenProfile(view : View) {
         val intent = Intent(this.activity, QuestionImplementationActivity::class.java)
-        Toast.makeText(this.activity, "Profiles", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }
 

@@ -3,8 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/bornLearningMain"
     tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.schoolreadiness.SchoolReadinessFragment">
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/born_learning_banner"/>
 
     <Button
         android:id="@+id/button_social_and_emotional"

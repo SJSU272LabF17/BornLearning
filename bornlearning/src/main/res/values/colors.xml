@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- born learning colors -->
+    <color name="bornLearningMain">#0E1A79</color>
+    <color name="bornLearningLight">#7E83B4</color>
+</resources>

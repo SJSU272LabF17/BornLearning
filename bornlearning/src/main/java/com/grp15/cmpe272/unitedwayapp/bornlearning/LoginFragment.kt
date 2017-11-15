@@ -36,13 +36,16 @@ class LoginFragment : Fragment() {
 
 
     fun login(view: View, id: EditText) {
-        val intent = Intent(this.activity, FirstActivity::class.java)
+        if (id.text.toString().matches(Regex("[0-9]+"))) {
+            val intent = Intent(this.activity, FirstActivity::class.java)
 
-        intent.putExtra("fname", id.text)
-        var facilitator: Facilitator = Facilitator(id.text.toString().toInt(), "Madhur", "650-111-2234")
+            var facilitator: Facilitator = Facilitator(id.text.toString().toInt(), "Madhur", "650-111-2234")
 
-        intent.putExtra(Facilitator.toString(), facilitator as Serializable)
-        Toast.makeText(this.activity, "Logging in: " + id.text, Toast.LENGTH_SHORT).show()
-        startActivity(intent)
+            intent.putExtra(Facilitator.toString(), facilitator as Serializable)
+            Toast.makeText(this.activity, "Logging in: " + id.text, Toast.LENGTH_SHORT).show()
+            startActivity(intent)
+        } else {
+            Toast.makeText(context, "ID should be an Integer.", Toast.LENGTH_SHORT).show()
+        }
     }
 }

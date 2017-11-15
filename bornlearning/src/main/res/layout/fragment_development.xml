@@ -2,8 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bornLearningMain"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/born_learning_banner"/>
 
     <LinearLayout
         android:id="@+id/linearlayout_development_center_info"

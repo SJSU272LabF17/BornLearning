@@ -3,13 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/bornLearningMain"
     tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.FirstFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/born_learning_banner"/>
+
 
     <TextView
         android:id="@+id/text_main_facilitator_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="@dimen/top_element_margin"
         android:layout_marginHorizontal="@dimen/main_button_edge_margin"
         android:text="TextView" />
@@ -18,6 +27,9 @@
         android:id="@+id/spinner_main_center_selection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/bornLearningMain"
+        android:backgroundTint="@color/bornLearningMain"
+        android:popupBackground="@color/bornLearningMain"
         android:layout_marginHorizontal="@dimen/main_button_edge_margin"
         android:layout_marginTop="@dimen/between_buttons_margin"
         android:contentDescription="@string/spinner_main_center_selection"/>
