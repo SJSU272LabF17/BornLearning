@@ -21,9 +21,9 @@ class QuestionImplementationActivity : AppCompatActivity(){
 
         ll.orientation = LinearLayout.VERTICAL
 
-        for(j in 0..2) {
+        for(j in 0..3) {
             val rg = RadioGroup(this)
-            rg.orientation = RadioGroup.VERTICAL
+            rg.orientation = RadioGroup.HORIZONTAL
             val tv = TextView(this);
             tv.textSize = 20f
             tv.text = "Question"+(j+1)
