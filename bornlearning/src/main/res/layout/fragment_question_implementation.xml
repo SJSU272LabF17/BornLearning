@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="22dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="28dp"
         android:text="Center Name: "
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/child_name"
@@ -26,122 +26,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="50dp"
         android:text="Child Name: "
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="@+id/center_name"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text_view_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="21dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="44dp"
-        android:text="Wants to keep his/her friend happy"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/child_name" />
-
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/radioGroup6"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="21dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/center_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_id">
-
-        <RadioButton
-            android:id="@+id/ans2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/ans1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/ans0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="20sp" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/text_view_id1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="23dp"
-        android:text="Wants to be like friends"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/rg1"
-        app:layout_constraintStart_toStartOf="@+id/child_name"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup6" />
-
-    <RadioGroup
-        android:id="@+id/rg1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="22dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/child_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_id1">
-
-        <RadioButton
-            android:id="@+id/ans21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/ans11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/ans01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="20sp" />
-    </RadioGroup>
-
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_question_implementation_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="59dp"
         android:layout_marginEnd="148dp"
         android:layout_marginStart="148dp"
         android:layout_marginTop="22dp"
-        android:text="Submit"
+        android:onClick="submitForm"
+        android:text="@string/button_question_implementation_submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rg1" />
+        />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearlayout_question_implementation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Include other widget or layout tags here. These are considered
+                "child views" or "children" of the linear layout -->
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

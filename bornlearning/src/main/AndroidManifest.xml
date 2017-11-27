@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.grp15.cmpe272.unitedwayapp.bornlearning">
-
+    <uses-feature android:name="android.hardware.screen.portrait" />
     <application>
-        <activity android:name=".development.schoolreadiness.SchoolReadinessActivity">
+        <activity android:name=".development.schoolreadiness.SchoolReadinessActivity"
+            android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -16,7 +17,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".development.DevelopmentActivity">
+        <activity android:name=".development.DevelopmentActivity"
+            android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -31,6 +33,7 @@
         </activity>
         <activity
             android:name=".profile.ChildrenProfileActivity"
+            android:screenOrientation="portrait"
             android:label="@string/children_profile">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -44,7 +47,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".profile.child.ChildProfileActivity">
+        <activity android:name=".profile.child.ChildProfileActivity"
+            android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -57,7 +61,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".development.AssessmentActivity">
+        <activity android:name=".development.AssessmentActivity"
+            android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -70,7 +75,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".development.HistoryActivity">
+        <activity android:name=".development.HistoryActivity"
+            android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -83,7 +89,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".profile.QuestionImplementationActivity">
+        <activity android:name=".profile.QuestionImplementationActivity"
+            android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -96,7 +103,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".development.FirstActivity">
+        <activity android:name=".development.FirstActivity"
+            android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -109,7 +117,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -127,7 +136,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".development.InfrastructureActivity">
+        <activity android:name=".development.InfrastructureActivity"
+            android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -140,7 +150,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".development.CommunityReadinessActivity">
+        <activity android:name=".development.CommunityReadinessActivity"
+            android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
