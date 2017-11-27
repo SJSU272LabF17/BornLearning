@@ -34,7 +34,7 @@
         <activity
             android:name=".profile.ChildrenProfileActivity"
             android:screenOrientation="portrait"
-            android:label="@string/children_profile">
+            android:label="Children Profile">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 

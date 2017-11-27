@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,38 +7,47 @@
     tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.LoginFragment">
 
     <ImageView
+        android:id="@+id/imageview_login_born_learning_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:src="@drawable/born_learning_banner"/>
 
     <TextView
-        android:id="@+id/txt_main_take_assessment"
+        android:id="@+id/textview_facilitator_access"
+        android:layout_below="@+id/imageview_login_born_learning_banner"
+        style="@style/BornLearningHeaderStyle"
+        android:text="@string/facilitator_access"
+        />
+
+
+    <EditText
+        android:id="@+id/edit_text_facilitator_id"
+        android:layout_below="@+id/textview_facilitator_access"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/between_buttons_margin"
+        android:layout_marginHorizontal="@dimen/main_button_edge_margin"/>
+
+    <TextView
+        android:id="@+id/textview_login_facilitator_id"
+        android:layout_below="@id/edit_text_facilitator_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="UW Facilitator ID"
+        android:text="@string/facilitator_id_title"
         android:textSize="@dimen/medium_general"
         android:layout_marginHorizontal="@dimen/main_button_edge_margin"
-        android:layout_marginTop="@dimen/between_buttons_margin"/>
-
-    <EditText
-        android:id="@+id/edit_text_facilitator_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/between_buttons_margin"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"/>
+        />
 
     <Button
         android:id="@+id/button_main_take_assessment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/BornLearningButtonStyle"
         android:layout_gravity="bottom"
-        android:layout_margin="@dimen/between_buttons_margin"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
-        android:layout_marginBottom="@dimen/bottom_element_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/between_buttons_margin"
         android:text="@string/button_login" />
 
 
-</LinearLayout>
+</RelativeLayout>

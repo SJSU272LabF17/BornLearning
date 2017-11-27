@@ -63,6 +63,8 @@ class FirstFragment: Fragment() {
     }
 
     private fun initializeSelectCenterSpinner() {
+        var spinner: Spinner? = activity?.findViewById(R.id.spinner_main_center_selection)
+
         var centerNames : Array<String> = getCenterNames(UUID.randomUUID()).toTypedArray()
 
         centerSelectionSpinner.adapter = ArrayAdapter<String>(this.activity,

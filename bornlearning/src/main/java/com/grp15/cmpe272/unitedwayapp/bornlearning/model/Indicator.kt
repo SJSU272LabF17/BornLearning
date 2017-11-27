@@ -6,7 +6,7 @@ import java.io.Serializable
  * Created by ManaliJain on 11/13/17.
  * Represents Community entity.
  */
-data class Indicators(
+data class Indicator(
 
         var indicatorID: Int,
 

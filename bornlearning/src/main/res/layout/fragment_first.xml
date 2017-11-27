@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +7,7 @@
     tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.FirstFragment">
 
     <ImageView
+        android:id="@+id/imageview_main_born_learning_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -19,35 +20,32 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
+        android:layout_below="@+id/imageview_main_born_learning_banner"
+        android:textStyle="bold"
+        android:textSize="@dimen/large_general"
         android:layout_marginTop="@dimen/top_element_margin"
         android:layout_marginHorizontal="@dimen/main_button_edge_margin"
         android:text="TextView" />
 
     <Spinner
         android:id="@+id/spinner_main_center_selection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/bornLearningMain"
-        android:backgroundTint="@color/bornLearningMain"
-        android:popupBackground="@color/bornLearningMain"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        style="@style/BornLearningSpinnerStyle"
+        android:layout_below="@+id/text_main_facilitator_id"
         android:layout_marginTop="@dimen/between_buttons_margin"
         android:contentDescription="@string/spinner_main_center_selection"/>
 
     <Button
         android:id="@+id/button_main_take_assessment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/between_buttons_margin"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        style="@style/BornLearningButtonStyle"
+        android:layout_above="@+id/button_main_view_history"
+        android:layout_margin="@dimen/between_buttons_margin"
         android:text="@string/button_main_take_assessment" />
 
     <Button
         android:id="@+id/button_main_view_history"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
-        android:layout_marginTop="@dimen/between_buttons_margin"
+        style="@style/BornLearningButtonStyle"
+        android:layout_margin="@dimen/between_buttons_margin"
+        android:layout_alignParentBottom="true"
         android:text="@string/button_main_view_history" />
 
-</LinearLayout>
+</RelativeLayout>

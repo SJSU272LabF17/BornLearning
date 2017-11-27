@@ -16,6 +16,7 @@
         android:id="@+id/linearlayout_development_center_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
         android:layout_marginTop="@dimen/top_element_margin"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
@@ -43,6 +44,7 @@
         android:id="@+id/linearlayout_development_sevika_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
         android:layout_marginTop="@dimen/between_buttons_margin"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="@+id/linearlayout_development_center_info">
@@ -68,9 +70,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearlayout_development_sebika_contact"
+        android:id="@+id/linearlayout_development_sevika_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:gravity="center_horizontal"
         android:layout_marginTop="40dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="@+id/linearlayout_development_center_info">
@@ -97,24 +101,21 @@
 
     <Button
         android:id="@+id/button_school_readiness"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/BornLearningButtonStyle"
         android:layout_margin="@dimen/between_buttons_margin"
-        app:layout_constraintTop_toBottomOf="@+id/linearlayout_development_sevika_info"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_development_sevika_contact"
         android:text="@string/button_development_school_readiness" />
 
     <Button
         android:id="@+id/button_infrastructure_development"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/BornLearningButtonStyle"
         android:layout_margin="@dimen/between_buttons_margin"
         app:layout_constraintTop_toBottomOf="@+id/button_school_readiness"
         android:text="Infrastructure Development" />
 
     <Button
         android:id="@+id/button_community_readiness"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/BornLearningButtonStyle"
         android:layout_margin="@dimen/between_buttons_margin"
         app:layout_constraintTop_toBottomOf="@+id/button_infrastructure_development"
         android:text="Community Readiness" />

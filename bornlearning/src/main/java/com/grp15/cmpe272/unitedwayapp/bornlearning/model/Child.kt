@@ -4,11 +4,11 @@ import java.io.Serializable
 
 /**
  * Created by ManaliJain on 11/13/17.
- * Represents Children entity.
+ * Represents Child entity.
  */
 
 
-data class Children(
+data class Child(
 
         var childID: Int,
 

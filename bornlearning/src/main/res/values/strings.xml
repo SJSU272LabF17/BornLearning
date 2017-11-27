@@ -36,11 +36,10 @@
     <!-- Children Profile -->
     <string name="item_children_profile_add_child_profile">Add Child Profile</string>
 
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <!-- Login -->
     <string name="button_login">Login</string>
+    <string name="facilitator_access">Facilitator\nAccess</string>
+    <string name="facilitator_id_title">Facilitator ID</string>
 
     <!-- Question implementation -->
     <string name="button_question_implementation_submit">Submit</string>
