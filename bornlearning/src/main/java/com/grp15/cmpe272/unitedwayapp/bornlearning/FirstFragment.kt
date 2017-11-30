@@ -1,14 +1,17 @@
-package com.grp15.cmpe272.unitedwayapp.bornlearning.development
+package com.grp15.cmpe272.unitedwayapp.bornlearning
 
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.grp15.cmpe272.unitedwayapp.bornlearning.R
+import com.grp15.cmpe272.unitedwayapp.bornlearning.development.DevelopmentActivity
+import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Facilitator
+import com.grp15.cmpe272.unitedwayapp.bornlearning.service.CenterServiceTask
 import java.util.*
 
 /**
@@ -20,13 +23,17 @@ class FirstFragment: Fragment() {
 
     lateinit var facilitator: Facilitator
 
+    var centerServiceTask: CenterServiceTask = CenterServiceTask()
+
+    var centers: List<Center>? = mutableListOf()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         var view : View = inflater.inflate(R.layout.fragment_first, container, false)
 
         centerSelectionSpinner = view.findViewById(R.id.spinner_main_center_selection)
 
-        initializeSelectCenterSpinner()
+
 
         var takeAssessmentButton : Button = view.findViewById(R.id.button_main_take_assessment)
         takeAssessmentButton.setOnClickListener { takeAssessment(it) }
@@ -37,7 +44,10 @@ class FirstFragment: Fragment() {
         facilitator = activity?.intent?.getSerializableExtra(Facilitator.toString()) as Facilitator
 
         var facilitatorTextView: TextView = view.findViewById(R.id.text_main_facilitator_id)
-        facilitatorTextView.setText(facilitator.facilitatorId.toString())
+        facilitatorTextView.text = facilitator.facilitatorId.toString()
+
+        initializeSelectCenterSpinner()
+
         // Inflate the layout for this fragment
         return view
     }
@@ -63,10 +73,14 @@ class FirstFragment: Fragment() {
     }
 
     private fun initializeSelectCenterSpinner() {
+        centerServiceTask.execute(CenterServiceTask.getCentersByFacilitatorIdEndpoint + facilitator.facilitatorId)
+        centers = centerServiceTask.get()?.toMutableList()
+        if (centers == null) {
+            Toast.makeText(activity, "Unable to find Centers", Toast.LENGTH_SHORT).show()
+        }
+
         var spinner: Spinner? = activity?.findViewById(R.id.spinner_main_center_selection)
-
-        var centerNames : Array<String> = getCenterNames(UUID.randomUUID()).toTypedArray()
-
+        var centerNames = centers!!.map {it.centerName}.toTypedArray()
         centerSelectionSpinner.adapter = ArrayAdapter<String>(this.activity,
                 android.R.layout.simple_list_item_1, centerNames)
 

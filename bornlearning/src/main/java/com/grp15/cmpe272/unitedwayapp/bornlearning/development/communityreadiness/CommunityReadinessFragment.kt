@@ -1,4 +1,4 @@
-package com.grp15.cmpe272.unitedwayapp.bornlearning.development
+package com.grp15.cmpe272.unitedwayapp.bornlearning.development.communityreadiness
 
 
 import android.os.Bundle

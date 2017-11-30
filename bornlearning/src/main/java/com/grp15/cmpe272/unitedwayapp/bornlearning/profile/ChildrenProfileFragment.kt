@@ -14,9 +14,7 @@ import android.widget.Toast
 import com.grp15.cmpe272.unitedwayapp.bornlearning.Constants
 
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
-import com.grp15.cmpe272.unitedwayapp.bornlearning.development.AssessmentActivity
-import com.grp15.cmpe272.unitedwayapp.bornlearning.development.CommunityReadinessActivity
-import com.grp15.cmpe272.unitedwayapp.bornlearning.development.InfrastructureActivity
+import com.grp15.cmpe272.unitedwayapp.bornlearning.development.infrastructure.InfrastructureActivity
 import com.grp15.cmpe272.unitedwayapp.bornlearning.development.schoolreadiness.SchoolReadinessActivity
 
 

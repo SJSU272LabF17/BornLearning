@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.grp15.cmpe272.unitedwayapp.bornlearning.development.FirstActivity
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Facilitator
 import java.io.Serializable
 
@@ -19,7 +18,6 @@ import java.io.Serializable
  */
 class LoginFragment : Fragment() {
 
-    //var login_id:String="";
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         var view: View = inflater.inflate(R.layout.fragment_login, container, false)

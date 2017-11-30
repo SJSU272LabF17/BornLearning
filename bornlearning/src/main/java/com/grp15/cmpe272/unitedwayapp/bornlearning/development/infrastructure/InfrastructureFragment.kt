@@ -1,4 +1,4 @@
-package com.grp15.cmpe272.unitedwayapp.bornlearning.development
+package com.grp15.cmpe272.unitedwayapp.bornlearning.development.infrastructure
 
 
 import android.content.Intent
@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
 import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.QuestionImplementationActivity

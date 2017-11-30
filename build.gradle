@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.51'
+    ext.kotlin_version = '1.2.0'
     ext.room_version = '1.0.0'
     ext.lombok_version = '1.16.18'
     repositories {
@@ -24,6 +24,9 @@ allprojects {
         maven {
             url  "https://dl.bintray.com/kotlin/exposed"
         }
+        maven { url "https://repo.spring.io/release" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://repo.spring.io/snapshot" }
     }
 }
 

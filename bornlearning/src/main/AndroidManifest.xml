@@ -3,6 +3,24 @@
     package="com.grp15.cmpe272.unitedwayapp.bornlearning">
     <uses-feature android:name="android.hardware.screen.portrait" />
     <application>
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter android:order="1">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="pixelconic.com"
+                    android:pathPattern="/.*"
+                    android:scheme="https" />
+
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".development.schoolreadiness.SchoolReadinessActivity"
             android:screenOrientation="portrait" >
             <intent-filter android:order="1">
@@ -103,7 +121,7 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".development.FirstActivity"
+        <activity android:name=".FirstActivity"
             android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -117,26 +135,7 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
-            android:screenOrientation="portrait" >
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="pixelconic.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".development.InfrastructureActivity"
+        <activity android:name=".development.infrastructure.InfrastructureActivity"
             android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -150,7 +149,7 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".development.CommunityReadinessActivity"
+        <activity android:name=".development.communityreadiness.CommunityReadinessActivity"
             android:screenOrientation="portrait" >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />

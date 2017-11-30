@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/bornLearningMain"
-    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.FirstFragment">
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.FirstFragment">
 
     <ImageView
         android:id="@+id/imageview_main_born_learning_banner"

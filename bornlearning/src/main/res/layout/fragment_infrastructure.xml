@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/bornLearningMain"
     android:orientation="vertical"
-    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.InfrastructureFragment">
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.infrastructure.InfrastructureFragment">
 
     <ImageView
         android:id="@+id/imageview_infrastructure_born_learning_banner"
