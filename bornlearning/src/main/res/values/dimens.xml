@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="main_button_edge_margin">50dp</dimen>
+    <dimen name="main_item_edge_margin">50dp</dimen>
     <dimen name="top_element_margin">100dp</dimen>
     <dimen name="bottom_element_margin">100dp</dimen>
 
@@ -12,6 +12,7 @@
     <dimen name="medium_general">14sp</dimen>
     <dimen name="large_general">18sp</dimen>
 
-    <dimen name="headers_font">36sp</dimen>
+    <dimen name="headers_font_size">36sp</dimen>
+    <dimen name="headers_small_font_size">18sp</dimen>
 
 </resources>

@@ -14,6 +14,7 @@ import com.grp15.cmpe272.unitedwayapp.bornlearning.Constants
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
 import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileActivity
+import java.io.Serializable
 
 
 /**
@@ -32,7 +33,7 @@ class DevelopmentFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_development, container, false)
 
         val subCategoryButton : Button = view.findViewById(R.id.button_school_readiness)
-        subCategoryButton.setOnClickListener{ openSubCategory(it) }
+        subCategoryButton.setOnClickListener{ openSchoolReadiness(it) }
 
         val infrastructureDevelopmentButton : Button = view.findViewById(R.id.button_infrastructure_development)
         infrastructureDevelopmentButton.setOnClickListener{ openInfrastructureCategory(it) }
@@ -60,21 +61,24 @@ class DevelopmentFragment : Fragment() {
     }
 
 
-    fun openSubCategory(view : View) {
+    fun openSchoolReadiness(view : View) {
         val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
         intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.SCHOOL_READINESS.name)
+        intent.putExtra(Center::javaClass.name, selectedCenter as Serializable)
         startActivity(intent)
     }
 
     fun openInfrastructureCategory(view : View) {
         val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
         intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.INFRASTRUCTURE.name)
+        intent.putExtra(Center::javaClass.name, selectedCenter as Serializable)
         startActivity(intent)
     }
 
     fun openCommunityReadinessCategory(view : View) {
         val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
         intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.COMMUNITY_READINESS.name)
+        intent.putExtra(Center::javaClass.name, selectedCenter as Serializable)
         startActivity(intent)
     }
 

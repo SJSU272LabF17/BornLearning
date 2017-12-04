@@ -15,7 +15,7 @@ object GlobalProperties {
     val APPLICATION_PROPERTIES_FILENAME = "application.properties"
 
     // keys
-    val GET_CENTER_BY_FACILITATORID_API_KEY = "getCenterByFacilitatorIdAPI"
+    val GET_CENTERS_BY_FACILITATORID_API_KEY = "getCentersByFacilitatorIdAPI"
     val GET_CHILDREN_BY_CENTERID_API_KEY = "getChildrenByCenterIdAPI"
 
     var properties: Properties = Properties()

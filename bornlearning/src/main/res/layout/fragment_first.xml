@@ -24,7 +24,7 @@
         android:textStyle="bold"
         android:textSize="@dimen/large_general"
         android:layout_marginTop="@dimen/top_element_margin"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_marginHorizontal="@dimen/main_item_edge_margin"
         android:text="TextView" />
 
     <Spinner

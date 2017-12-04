@@ -1,7 +1,6 @@
 package com.grp15.cmpe272.unitedwayapp.bornlearning
 
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -9,12 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.grp15.cmpe272.unitedwayapp.bornlearning.development.DevelopmentActivity
-import com.grp15.cmpe272.unitedwayapp.bornlearning.development.DevelopmentFragment
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Facilitator
 import com.grp15.cmpe272.unitedwayapp.bornlearning.service.CenterServiceTask
 import java.io.Serializable
-import java.util.*
 
 /**
  * Created by amita on 11/9/2017.
@@ -66,7 +63,7 @@ class FirstFragment: Fragment() {
         Toast.makeText(this.activity, "View History", Toast.LENGTH_SHORT).show()
     }
 
-    private fun getCenterNames(){
+    private fun getCenters(){
         centerServiceTask.execute(CenterServiceTask.getCentersByFacilitatorIdEndpoint + facilitator.facilitatorId)
         centers = centerServiceTask.get()?.toMutableList()
         if (centers == null) {
@@ -76,10 +73,10 @@ class FirstFragment: Fragment() {
 
     private fun initializeSelectCenterSpinner() {
 
-        getCenterNames()
+        getCenters()
 
         var spinner: Spinner? = activity?.findViewById(R.id.spinner_main_center_selection)
-        val centerNames = centers!!.map {it.centerName}.toTypedArray()
+        val centerNames = centers?.map {it.centerName}?.toTypedArray() ?: emptyArray()
         centerSelectionSpinner.adapter = ArrayAdapter<String>(this.activity,
                 android.R.layout.simple_list_item_1, centerNames)
 

@@ -11,6 +11,7 @@
 
     <!-- general -->
     <string name="children_profile">Children Profile</string>
+    <string name="bornlearning_banner_dec">BornLearning banner</string>
 
     <!-- main -->
     <string name="button_main_take_assessment">Take Assessment</string>
@@ -25,6 +26,8 @@
     <string name="textview_development_phone_number_title">Phone Number:</string>
     <string name="textview_development_phone_number_value">Phone Number</string>
     <string name="button_development_school_readiness">School Readiness</string>
+    <string name="button_development_infrastructure_development">Infrastructure Development</string>
+    <string name="button_development_community_readiness">Community Readiness</string>
 
     <!-- School Readiness-->
     <string name="button_social_and_emotional">Social and Emotional</string>

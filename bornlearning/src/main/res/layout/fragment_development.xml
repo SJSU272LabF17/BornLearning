@@ -16,7 +16,7 @@
         android:id="@+id/linearlayout_development_center_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_marginHorizontal="@dimen/main_item_edge_margin"
         android:layout_marginTop="@dimen/top_element_margin"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
@@ -44,7 +44,7 @@
         android:id="@+id/linearlayout_development_sevika_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_marginHorizontal="@dimen/main_item_edge_margin"
         android:layout_marginTop="@dimen/between_buttons_margin"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="@+id/linearlayout_development_center_info">
@@ -73,7 +73,7 @@
         android:id="@+id/linearlayout_development_sevika_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_marginHorizontal="@dimen/main_item_edge_margin"
         android:gravity="center_horizontal"
         android:layout_marginTop="40dp"
         android:orientation="horizontal"
@@ -111,14 +111,14 @@
         style="@style/BornLearningButtonStyle"
         android:layout_margin="@dimen/between_buttons_margin"
         app:layout_constraintTop_toBottomOf="@+id/button_school_readiness"
-        android:text="Infrastructure Development" />
+        android:text="@string/button_development_infrastructure_development" />
 
     <Button
         android:id="@+id/button_community_readiness"
         style="@style/BornLearningButtonStyle"
         android:layout_margin="@dimen/between_buttons_margin"
         app:layout_constraintTop_toBottomOf="@+id/button_infrastructure_development"
-        android:text="Community Readiness" />
+        android:text="@string/button_development_community_readiness" />
 
 
 </android.support.constraint.ConstraintLayout>

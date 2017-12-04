@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/between_buttons_margin"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"/>
+        android:layout_marginHorizontal="@dimen/main_item_edge_margin"/>
 
     <TextView
         android:id="@+id/textview_login_facilitator_id"
@@ -38,7 +38,7 @@
         android:gravity="center"
         android:text="@string/facilitator_id_title"
         android:textSize="@dimen/medium_general"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_marginHorizontal="@dimen/main_item_edge_margin"
         />
 
     <Button

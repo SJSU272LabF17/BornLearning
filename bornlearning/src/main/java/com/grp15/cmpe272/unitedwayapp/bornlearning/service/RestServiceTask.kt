@@ -14,12 +14,14 @@ abstract class RestServiceTask<T>: AsyncTask<String, Void, MutableList<T>>() {
 
     private fun getEntitiesRaw(url: String): MutableList<T>? {
 
-        var entities: MutableList<T> = mutableListOf()
-        var error: String? = null
+        val entities: MutableList<T>
         val (request, response, result) = url.httpGet().responseString()
-        var data = result.get()
+        if (response.statusCode >= 400) {
+            return null
+        }
+        val data = result.get()
         entities = convertToDTOs(data)
-        return if (error != null) null else entities
+        return entities
     }
 
     abstract fun convertToDTOs(data: String): MutableList<T>

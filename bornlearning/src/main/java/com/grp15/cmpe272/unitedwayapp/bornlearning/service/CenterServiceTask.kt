@@ -10,7 +10,7 @@ import com.grp15.cmpe272.unitedwayapp.bornlearning.util.GlobalProperties
 class CenterServiceTask : RestServiceTask<Center>() {
 
     companion object {
-        var getCentersByFacilitatorIdEndpoint = GlobalProperties.properties.getProperty(GlobalProperties.GET_CENTER_BY_FACILITATORID_API_KEY)
+        var getCentersByFacilitatorIdEndpoint = GlobalProperties.properties.getProperty(GlobalProperties.GET_CENTERS_BY_FACILITATORID_API_KEY)
     }
 
     override fun convertToDTOs(data: String): MutableList<Center> {

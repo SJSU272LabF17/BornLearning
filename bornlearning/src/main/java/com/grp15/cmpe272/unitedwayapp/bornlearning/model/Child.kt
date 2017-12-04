@@ -28,7 +28,9 @@ data class Child(
 
         var imageID: String? = null,
 
-        var active: String
+        var active: String,
+
+        var age: Int
 
 ) : Serializable {
 }
