@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Facilitator
+import com.grp15.cmpe272.unitedwayapp.bornlearning.util.GlobalProperties
 import java.io.Serializable
 
 
@@ -20,26 +21,29 @@ class LoginFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        var view: View = inflater.inflate(R.layout.fragment_login, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_login, container, false)
+
+        // load global properties
+        GlobalProperties.loadProperties(context!!, GlobalProperties.APPLICATION_PROPERTIES_FILENAME)
 
 
-        var uwSid: EditText  = view.findViewById(R.id.edit_text_facilitator_id)
+        val uwSid: EditText  = view.findViewById(R.id.edit_text_facilitator_id)
 
 
-        var takeAssessmentButton : Button = view.findViewById(R.id.button_main_take_assessment)
+        val takeAssessmentButton : Button = view.findViewById(R.id.button_main_take_assessment)
         takeAssessmentButton.setOnClickListener { login(it, uwSid) }
 
         return view
     }
 
 
-    fun login(view: View, id: EditText) {
+    private fun login(view: View, id: EditText) {
         if (id.text.toString().matches(Regex("[0-9]+"))) {
             val intent = Intent(this.activity, FirstActivity::class.java)
 
-            var facilitator: Facilitator = Facilitator(id.text.toString().toInt(), "Madhur", "650-111-2234")
+            val facilitator = Facilitator(id.text.toString().toInt(), "Madhur", "650-111-2234")
 
-            intent.putExtra(Facilitator.toString(), facilitator as Serializable)
+            intent.putExtra(Facilitator::javaClass.name, facilitator as Serializable)
             Toast.makeText(this.activity, "Logging in: " + id.text, Toast.LENGTH_SHORT).show()
             startActivity(intent)
         } else {

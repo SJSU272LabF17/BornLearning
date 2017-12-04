@@ -2,6 +2,7 @@ package com.grp15.cmpe272.unitedwayapp.bornlearning.service
 
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
+import com.grp15.cmpe272.unitedwayapp.bornlearning.util.GlobalProperties
 
 /**
  * Created by vin on 11/27/17.
@@ -9,7 +10,7 @@ import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
 class CenterServiceTask : RestServiceTask<Center>() {
 
     companion object {
-        var getCentersByFacilitatorIdEndpoint = "https://cmpe272-gr15-unitedway.appspot.com/centers/byFacilitator/"
+        var getCentersByFacilitatorIdEndpoint = GlobalProperties.properties.getProperty(GlobalProperties.GET_CENTER_BY_FACILITATORID_API_KEY)
     }
 
     override fun convertToDTOs(data: String): MutableList<Center> {
