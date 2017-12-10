@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Facilitator
+import com.grp15.cmpe272.unitedwayapp.bornlearning.task.FacilitatorTask
 import com.grp15.cmpe272.unitedwayapp.bornlearning.util.GlobalProperties
 import java.io.Serializable
 
@@ -19,6 +20,10 @@ import java.io.Serializable
  */
 class LoginFragment : Fragment() {
 
+    lateinit var facilitatorTask: FacilitatorTask;
+
+    private var facilitator: Facilitator? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view: View = inflater.inflate(R.layout.fragment_login, container, false)
@@ -26,6 +31,7 @@ class LoginFragment : Fragment() {
         // load global properties
         GlobalProperties.loadProperties(context!!, GlobalProperties.APPLICATION_PROPERTIES_FILENAME)
 
+        facilitatorTask = FacilitatorTask()
 
         val uwSid: EditText  = view.findViewById(R.id.edit_text_facilitator_id)
 
@@ -36,12 +42,17 @@ class LoginFragment : Fragment() {
         return view
     }
 
+    private fun getFacilitator(id: Int) {
+        facilitatorTask.execute(FacilitatorTask.GET_FACILITATOR_BY_ID + id.toString())
+        facilitator = facilitatorTask.get()
+    }
+
 
     private fun login(view: View, id: EditText) {
         if (id.text.toString().matches(Regex("[0-9]+"))) {
-            val intent = Intent(this.activity, FirstActivity::class.java)
+            val intent = Intent(this.activity, MainActivity::class.java)
 
-            val facilitator = Facilitator(id.text.toString().toInt(), "Madhur", "650-111-2234")
+            getFacilitator(id.text.toString().toInt())
 
             intent.putExtra(Facilitator::javaClass.name, facilitator as Serializable)
             Toast.makeText(this.activity, "Logging in: " + id.text, Toast.LENGTH_SHORT).show()

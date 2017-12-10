@@ -26,6 +26,7 @@
         android:layout_below="@+id/textview_facilitator_access"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/enter_facilitator_id"
         android:layout_marginTop="@dimen/between_buttons_margin"
         android:layout_marginHorizontal="@dimen/main_item_edge_margin"/>
 

@@ -22,15 +22,17 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            style="@style/BornLearningHeaderSmallStyle"
             android:id="@+id/textview_development_center_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:gravity="start"
             android:text="@string/textview_development_center_title" />
 
         <TextView
+            style="@style/BornLearningHeaderSmallStyle"
             android:id="@+id/textview_development_center_name_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,18 +49,20 @@
         android:layout_marginHorizontal="@dimen/main_item_edge_margin"
         android:layout_marginTop="@dimen/between_buttons_margin"
         android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="@+id/linearlayout_development_center_info">
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_development_center_info">
 
         <TextView
+            style="@style/BornLearningHeaderSmallStyle"
             android:id="@+id/textview_development_sevika_name_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:gravity="start"
             android:text="Sevika Name:" />
 
         <TextView
+            style="@style/BornLearningHeaderSmallStyle"
             android:id="@+id/textview_development_sevika_name_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,21 +78,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/main_item_edge_margin"
+        android:layout_marginTop="@dimen/between_buttons_margin"
         android:gravity="center_horizontal"
-        android:layout_marginTop="40dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="@+id/linearlayout_development_center_info">
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_development_sevika_info">
 
         <TextView
+            style="@style/BornLearningHeaderSmallStyle"
             android:id="@+id/textview_development_sevika_contact_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:gravity="start"
             android:text="Phone Number:" />
 
         <TextView
+            style="@style/BornLearningHeaderSmallStyle"
             android:id="@+id/textview_development_sevika_contact_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

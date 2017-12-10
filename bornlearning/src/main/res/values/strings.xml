@@ -39,10 +39,23 @@
     <!-- Children Profile -->
     <string name="item_children_profile_add_child_profile">Add Child Profile</string>
 
+    <!-- Add Child Profile -->
+    <string name="add_child_id">Child Id:</string>
+    <string name="add_child_first_name">First Name:</string>
+    <string name="add_child_last_name">Last Name:</string>
+    <string name="add_child_dob">Date of Birth:</string>
+    <string name="add_child_gender">Gender:</string>
+    <string name="radio_button_gender_male">M</string>
+    <string name="radio_button_gender_female">F</string>
+    <string name="add_child_guardian_name">Guardian Name:</string>
+    <string name="add_child_guardian_phone">Guardian Phone:</string>
+
+
     <!-- Login -->
     <string name="button_login">Login</string>
     <string name="facilitator_access">Facilitator\nAccess</string>
     <string name="facilitator_id_title">Facilitator ID</string>
+    <string name="enter_facilitator_id">Enter Facilitator ID</string>
 
     <!-- Question implementation -->
     <string name="button_question_implementation_submit">Submit</string>

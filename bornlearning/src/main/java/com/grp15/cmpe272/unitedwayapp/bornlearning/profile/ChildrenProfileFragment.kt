@@ -8,8 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
@@ -20,7 +18,7 @@ import com.grp15.cmpe272.unitedwayapp.bornlearning.development.infrastructure.In
 import com.grp15.cmpe272.unitedwayapp.bornlearning.development.schoolreadiness.SchoolReadinessActivity
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Child
-import com.grp15.cmpe272.unitedwayapp.bornlearning.service.ChildServiceTask
+import com.grp15.cmpe272.unitedwayapp.bornlearning.task.ChildTask
 
 
 /**
@@ -30,7 +28,7 @@ class ChildrenProfileFragment : Fragment() {
 
     private lateinit var selectedCenter: Center
 
-    private var childServiceTask: ChildServiceTask = ChildServiceTask()
+    private var childTask: ChildTask = ChildTask()
 
     private var children: List<Child>? = mutableListOf()
 
@@ -71,8 +69,8 @@ class ChildrenProfileFragment : Fragment() {
      * Execute a GET request to retrieve children based on the centerId.
      */
     private fun getChildren() {
-        childServiceTask.execute(ChildServiceTask.GET_CHILDREN_BY_CENTERID_ENDPOINT + selectedCenter.centerId)
-        children = childServiceTask.get()?.toMutableList()
+        childTask.execute(ChildTask.GET_CHILDREN_BY_CENTERID_ENDPOINT + selectedCenter.centerId)
+        children = childTask.get()?.toMutableList()
         if (children == null) {
             Toast.makeText(activity, "Unable to find Children.", Toast.LENGTH_SHORT).show()
             children = emptyList()

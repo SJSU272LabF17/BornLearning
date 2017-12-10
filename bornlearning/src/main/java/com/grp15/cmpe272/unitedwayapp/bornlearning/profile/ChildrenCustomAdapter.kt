@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Child
@@ -26,6 +27,7 @@ class ChildrenCustomAdapter(var context: Context, private var children: ArrayLis
         val childNameTextView: TextView? = view?.findViewById(R.id.textview_row_child_name)
         val childAgeTextView: TextView? = view?.findViewById(R.id.textview_row_child_age)
         val childGenderTextView: TextView? = view?.findViewById(R.id.textview_row_child_gender)
+        val editChildImageView: ImageView? = view?.findViewById(R.id.imageview_row_edit_icon)
 
         val childFullName = children[position].childFName + " " + children[position].childLName
         childNameTextView?.text = childFullName
