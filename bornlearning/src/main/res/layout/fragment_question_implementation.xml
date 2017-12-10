@@ -50,7 +50,7 @@
         style="@style/BornLearningButtonStyle"
         android:layout_margin="@dimen/between_buttons_margin"
         android:onClick="submitForm"
-        android:text="@string/button_question_implementation_submit"
+        android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

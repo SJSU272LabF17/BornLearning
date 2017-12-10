@@ -10,7 +10,7 @@ import android.widget.*
 import com.grp15.cmpe272.unitedwayapp.bornlearning.development.DevelopmentActivity
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Facilitator
-import com.grp15.cmpe272.unitedwayapp.bornlearning.task.CenterTask
+import com.grp15.cmpe272.unitedwayapp.bornlearning.task.CenterGetListTask
 import java.io.Serializable
 
 /**
@@ -22,7 +22,7 @@ class MainFragment : Fragment() {
 
     lateinit var facilitator: Facilitator
 
-    var centerTask: CenterTask = CenterTask()
+    private lateinit var centerGetListTask: CenterGetListTask
 
     var centers: List<Center>? = mutableListOf()
 
@@ -68,8 +68,9 @@ class MainFragment : Fragment() {
     }
 
     private fun getCenters(){
-        centerTask.execute(CenterTask.getCentersByFacilitatorIdEndpoint + facilitator.facilitatorID)
-        centers = centerTask.get()?.toMutableList()
+        centerGetListTask = CenterGetListTask()
+        centerGetListTask.execute(CenterGetListTask.getCentersByFacilitatorIdEndpoint + facilitator.facilitatorID)
+        centers = centerGetListTask.get()?.toMutableList()
         if (centers == null) {
             Toast.makeText(activity, "Unable to find Centers", Toast.LENGTH_SHORT).show()
         }

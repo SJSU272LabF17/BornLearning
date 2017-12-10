@@ -18,7 +18,7 @@ import com.grp15.cmpe272.unitedwayapp.bornlearning.development.infrastructure.In
 import com.grp15.cmpe272.unitedwayapp.bornlearning.development.schoolreadiness.SchoolReadinessActivity
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Child
-import com.grp15.cmpe272.unitedwayapp.bornlearning.task.ChildTask
+import com.grp15.cmpe272.unitedwayapp.bornlearning.task.ChildGetListTask
 
 
 /**
@@ -28,11 +28,15 @@ class ChildrenProfileFragment : Fragment() {
 
     private lateinit var selectedCenter: Center
 
-    private var childTask: ChildTask = ChildTask()
+    private lateinit var childGetListTask: ChildGetListTask
 
     private var children: List<Child>? = mutableListOf()
 
     private lateinit var childrenCustomAdapter: ChildrenCustomAdapter
+
+    private var developmentType: String? = null
+
+    private lateinit var listView: ListView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -40,7 +44,7 @@ class ChildrenProfileFragment : Fragment() {
         var view = inflater.inflate(R.layout.fragment_children_profile, container, false)
 
         // get development type
-        var developmentType = activity?.intent?.getStringExtra(Constants.DEVELOPMENT_TYPE)
+        developmentType = activity?.intent?.getStringExtra(Constants.DEVELOPMENT_TYPE)
 
         // take the selectedCenter from intent
         selectedCenter = activity?.intent?.getSerializableExtra(Center::javaClass.name) as Center
@@ -48,10 +52,17 @@ class ChildrenProfileFragment : Fragment() {
         var centerTextView: TextView = view.findViewById(R.id.textview_children_profile_center_name_value)
         centerTextView.text = selectedCenter.centerName
 
-        getChildren()
+        listView = view.findViewById(R.id.listview_children_profile)
 
+        // Inflate the layout for this fragment
+        return view
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        getChildren()
         // setup listview
-        var listView: ListView = view.findViewById(R.id.listview_children_profile)
         childrenCustomAdapter = ChildrenCustomAdapter(activity!!.applicationContext, ArrayList(children))
         listView.adapter = childrenCustomAdapter
         listView.onItemClickListener = (object: AdapterView.OnItemClickListener {
@@ -59,18 +70,15 @@ class ChildrenProfileFragment : Fragment() {
                 takeAssessment(view!!, developmentType!!, children!![position])
             }
         })
-
-
-        // Inflate the layout for this fragment
-        return view
     }
 
     /**
      * Execute a GET request to retrieve children based on the centerId.
      */
     private fun getChildren() {
-        childTask.execute(ChildTask.GET_CHILDREN_BY_CENTERID_ENDPOINT + selectedCenter.centerId)
-        children = childTask.get()?.toMutableList()
+        childGetListTask = ChildGetListTask()
+        childGetListTask.execute(ChildGetListTask.GET_CHILDREN_BY_CENTERID_ENDPOINT + selectedCenter.centerId)
+        children = childGetListTask.get()?.toMutableList()
         if (children == null) {
             Toast.makeText(activity, "Unable to find Children.", Toast.LENGTH_SHORT).show()
             children = emptyList()

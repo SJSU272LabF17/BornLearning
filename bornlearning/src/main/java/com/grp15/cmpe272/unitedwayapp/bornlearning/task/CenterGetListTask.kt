@@ -7,7 +7,7 @@ import com.grp15.cmpe272.unitedwayapp.bornlearning.util.GlobalProperties
 /**
  * Created by vin on 11/27/17.
  */
-class CenterTask : RestGetListTask<Center>() {
+class CenterGetListTask : RestGetListTask<Center>() {
 
     companion object {
         var getCentersByFacilitatorIdEndpoint = GlobalProperties.properties.getProperty(GlobalProperties.GET_CENTERS_BY_FACILITATORID_API_KEY)

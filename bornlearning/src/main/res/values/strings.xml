@@ -12,6 +12,7 @@
     <!-- general -->
     <string name="children_profile">Children Profile</string>
     <string name="bornlearning_banner_dec">BornLearning banner</string>
+    <string name="submit">Submit</string>
 
     <!-- main -->
     <string name="button_main_take_assessment">Take Assessment</string>
@@ -58,6 +59,6 @@
     <string name="enter_facilitator_id">Enter Facilitator ID</string>
 
     <!-- Question implementation -->
-    <string name="button_question_implementation_submit">Submit</string>
+
 
 </resources>

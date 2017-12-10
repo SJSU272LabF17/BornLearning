@@ -10,10 +10,6 @@
         <item name="android:editTextColor">@color/colorWhite</item>
         <item name="android:textColorPrimary">@color/colorWhite</item>
         <item name="android:textColorSecondary">@color/colorWhite</item>
-        <item name="android:textColorTertiary">@color/colorWhite</item>
-        <item name="android:textColorPrimaryInverse">@color/colorWhite</item>
-        <item name="android:textColorSecondaryInverse">@color/colorWhite</item>
-        <item name="android:textColorTertiaryInverse">@color/colorWhite</item>
     </style>
 
 </resources>

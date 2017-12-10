@@ -6,13 +6,18 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
+import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
 import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.child.ChildProfileActivity
 
 class ChildrenProfileActivity : AppCompatActivity() {
 
+    lateinit var selectedCenter: Center
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_children_profile)
+        selectedCenter = intent?.getSerializableExtra(Center::javaClass.name) as Center
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -28,9 +33,14 @@ class ChildrenProfileActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
+
     private fun addChildProfile() : Boolean {
         val intent = Intent(this, ChildProfileActivity::class.java)
         intent.putExtra(ChildProfileActivity.SELECT_ACTION, ChildProfileActivity.ADD_CHILD_PROFILE)
+        intent.putExtra(Center::javaClass.name, selectedCenter)
         startActivity(intent)
         return true
     }

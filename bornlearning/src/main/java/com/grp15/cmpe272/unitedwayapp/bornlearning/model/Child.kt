@@ -7,10 +7,9 @@ import java.io.Serializable
  * Represents Child entity.
  */
 
-
 data class Child(
 
-        var childID: Int,
+        var childID: Int = 0,
 
         var childFName: String,
 
@@ -30,7 +29,7 @@ data class Child(
 
         var active: String,
 
-        var age: Int
+        var age: Int? = null
 
 ) : Serializable {
 }

@@ -18,6 +18,9 @@ object GlobalProperties {
     val GET_CENTERS_BY_FACILITATORID_API_KEY = "getCentersByFacilitatorIdAPI"
     val GET_CHILDREN_BY_CENTERID_API_KEY = "getChildrenByCenterIdAPI"
     val GET_FACILITATOR_BY_ID_API_KEY = "getFacilitatorByIdAPI"
+    val POST_ADD_CHILD_API = "postAddChildAPI"
+    val PUT_UPDATE_CHILD_API = "putUpdateChildAPI"
+    val READ_TIMEOUT_MILLIS = "readTimeoutInMillis"
 
     var properties: Properties = Properties()
 

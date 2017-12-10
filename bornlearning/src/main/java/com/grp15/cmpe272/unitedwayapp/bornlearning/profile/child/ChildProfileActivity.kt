@@ -1,6 +1,5 @@
 package com.grp15.cmpe272.unitedwayapp.bornlearning.profile.child
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -25,7 +24,8 @@ class ChildProfileActivity : AppCompatActivity() {
         if (findViewById<FrameLayout>(R.id.framelayout_child_profile_fragment_container) != null) {
             //val intent : Intent = getIntent()
             when (intent.extras.getString(SELECT_ACTION)) {
-                ADD_CHILD_PROFILE -> currentFragment = AddChildProfileFragment()
+                ADD_CHILD_PROFILE -> currentFragment = AddUpdateChildProfileFragment()
+                EDIT_CHILD_PROFILE -> currentFragment = AddUpdateChildProfileFragment()
                 else -> currentFragment = ViewChildProfileFragment()
             }
 
