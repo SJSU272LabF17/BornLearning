@@ -4,35 +4,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/bornLearningMain"
+    android:backgroundTint="@color/bornLearningMain"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileFragment">
 
     <ImageView
+        android:contentDescription="@string/bornlearning_banner_dec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:src="@drawable/born_learning_banner"/>
 
     <TextView
+        android:layout_marginTop="@dimen/main_item_edge_margin"
         android:id="@+id/textview_children_profile_center_name_value"
+        style="@style/BornLearningHeaderSmallStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_gravity="center"
         android:text="@string/textview_development_center_name_value" />
 
-
-    <Button
-        android:id="@+id/button_place_holder_take_assessment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PLACE HOLDER TAKE ASSESSMENT"/>
-
     <ListView
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/between_buttons_margin"
         android:id="@+id/listview_children_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000">
     </ListView>
 
 

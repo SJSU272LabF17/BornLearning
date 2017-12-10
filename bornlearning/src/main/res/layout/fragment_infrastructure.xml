@@ -1,12 +1,13 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bornLearningMain"
     android:orientation="vertical"
-    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.InfrastructureFragment">
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.infrastructure.InfrastructureFragment">
 
     <ImageView
+        android:id="@+id/imageview_infrastructure_born_learning_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -14,27 +15,24 @@
 
     <Button
         android:id="@+id/button_building_infrastracture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_below="@+id/imageview_infrastructure_born_learning_banner"
+        style="@style/BornLearningButtonStyle"
         android:layout_marginTop="@dimen/top_element_margin"
         android:text="Building Infrastracture" />
 
     <Button
         android:id="@+id/button_portable_infrastructure"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_below="@+id/button_building_infrastracture"
+        style="@style/BornLearningButtonStyle"
         android:layout_marginTop="@dimen/between_buttons_margin"
         android:text="Portable Infrastructure" />
 
     <Button
         android:id="@+id/button_educational_materials"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/main_button_edge_margin"
+        android:layout_below="@+id/button_portable_infrastructure"
+        style="@style/BornLearningButtonStyle"
         android:layout_marginTop="@dimen/between_buttons_margin"
         android:text="Educational Materials" />
 
 
-</LinearLayout>
+</RelativeLayout>

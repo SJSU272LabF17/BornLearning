@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#00000000">
+
+        <TextView
+            android:id="@+id/textview_row_child_name"
+            style="@style/BornLearningRegularTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            android:layout_weight="6"
+            android:gravity="start"
+            android:layout_gravity="start"
+            android:text="childName"/>
+
+        <TextView
+            android:id="@+id/textview_row_child_age"
+            style="@style/BornLearningRegularTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="start"
+            android:layout_gravity="start"
+            android:text="age"/>
+
+        <TextView
+            android:id="@+id/textview_row_child_gender"
+            style="@style/BornLearningRegularTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="start"
+            android:layout_gravity="start"
+            android:text="gender"/>
+
+    <ImageView
+        android:id="@+id/imageview_row_edit_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_edit_child"/>
+
+</LinearLayout>

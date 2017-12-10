@@ -7,7 +7,7 @@ import java.io.Serializable
  */
 data class Facilitator(
 
-    val facilitatorId: Int,
+    val facilitatorID: Int,
 
     val name: String,
 

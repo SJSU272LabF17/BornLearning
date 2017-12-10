@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.InfrastructureActivity">
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.infrastructure.InfrastructureActivity">
 
     <fragment
         android:id="@+id/fragment_infrastructure"
-        android:name="com.grp15.cmpe272.unitedwayapp.bornlearning.development.InfrastructureFragment"
+        android:name="com.grp15.cmpe272.unitedwayapp.bornlearning.development.infrastructure.InfrastructureFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </android.support.constraint.ConstraintLayout>

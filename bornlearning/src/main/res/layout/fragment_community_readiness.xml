@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.CommunityReadinessFragment">
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.development.communityreadiness.CommunityReadinessFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <fragment
         android:id="@+id/fragment_main"
-        android:name="com.grp15.cmpe272.unitedwayapp.bornlearning.development.CommunityReadinessFragment"
+        android:name="com.grp15.cmpe272.unitedwayapp.bornlearning.development.communityreadiness.CommunityReadinessFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

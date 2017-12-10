@@ -6,14 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColor">@color/textColorWhite</item>
-        <item name="android:editTextColor">@color/textColorWhite</item>
-        <item name="android:textColorPrimary">@color/textColorWhite</item>
-        <item name="android:textColorSecondary">@color/textColorWhite</item>
-        <item name="android:textColorTertiary">@color/textColorWhite</item>
-        <item name="android:textColorPrimaryInverse">@color/textColorWhite</item>
-        <item name="android:textColorSecondaryInverse">@color/textColorWhite</item>
-        <item name="android:textColorTertiaryInverse">@color/textColorWhite</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:editTextColor">@color/colorWhite</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
     </style>
 
 </resources>
