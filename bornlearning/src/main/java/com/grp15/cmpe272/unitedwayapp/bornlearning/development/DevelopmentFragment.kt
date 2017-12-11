@@ -63,21 +63,21 @@ class DevelopmentFragment : Fragment() {
 
     fun openSchoolReadiness(view : View) {
         val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
-        intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.SCHOOL_READINESS.name)
+        intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.SCHOOL_READINESS)
         intent.putExtra(Center::class.simpleName, selectedCenter as Serializable)
         startActivity(intent)
     }
 
     fun openInfrastructureCategory(view : View) {
         val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
-        intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.INFRASTRUCTURE.name)
+        intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.INFRASTRUCTURE)
         intent.putExtra(Center::class.simpleName, selectedCenter as Serializable)
         startActivity(intent)
     }
 
     fun openCommunityReadinessCategory(view : View) {
         val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
-        intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.COMMUNITY_READINESS.name)
+        intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.COMMUNITY_READINESS)
         intent.putExtra(Center::class.simpleName, selectedCenter as Serializable)
         startActivity(intent)
     }

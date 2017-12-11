@@ -27,6 +27,8 @@ class SchoolReadinessFragment : Fragment() {
 
     private var selectedChild: Child? = null
 
+    private lateinit var selectedCategory: Constants.DevelopmentType
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.fragment_school_readiness, container, false)
@@ -35,6 +37,8 @@ class SchoolReadinessFragment : Fragment() {
         // take the selectedCenter & selectedChild from intent
         selectedChild = activity?.intent?.getSerializableExtra(Child::class.simpleName) as Child
         selectedCenter = activity?.intent?.getSerializableExtra(Center::class.simpleName) as Center
+        selectedCategory = activity?.intent?.getSerializableExtra(Constants.DEVELOPMENT_TYPE) as Constants.DevelopmentType
+
 
         var socialAndEmotionalButton : Button = view.findViewById(R.id.button_social_and_emotional)
 
@@ -75,6 +79,8 @@ class SchoolReadinessFragment : Fragment() {
         }
         intent.putExtra(Center::class.simpleName, selectedCenter)
         intent.putExtra(Child::class.simpleName, selectedChild)
+        intent.putExtra(Constants.DEVELOPMENT_TYPE, selectedCategory)
+
         startActivity(intent)
     }
 

@@ -1,7 +1,8 @@
 package com.grp15.cmpe272.unitedwayapp.bornlearning.model
 
-import org.joda.time.DateTime
 import java.io.Serializable
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Created by vin on 12/10/17.
@@ -12,10 +13,18 @@ data class Response (
 
     var indicatorID: Int,
 
-    var centerID: Int,
+    var childID: Int,
 
     var response: Int,
 
-    var assessmentDate: DateTime
+    var assessmentDate: String
 
-): Serializable
+): Serializable {
+    companion object {
+        val simpleDateFormatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+
+        fun convertDateToString(date: Date): String {
+            return simpleDateFormatter.format(date)
+        }
+    }
+}

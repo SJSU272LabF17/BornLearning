@@ -31,16 +31,14 @@ class IndicatorGetListTask: RestGetListTask<Indicator>() {
         } else { GET_INDICATORS_ENDPOINT.httpGet(listOf(SUB_CATEGORY_KEYNAME to subCategory,
                     AGE_GROUP_KEYNAME to ageGroup))
         }
-        Log.i(TAG, "Request: " + requestWithParam.name)
+        Log.i(TAG, "Request: " + requestWithParam.cUrlString())
 
         val (request, response, result) = requestWithParam.timeoutRead(RestGetListTask.READ_TIMEOUT_MS).responseString()
         if (response.statusCode >= 400) {
             return null
         }
         val data = result.get()
-        if (data != null) {
-            entities = convertToDTOs(data.toString())
-        }
+        entities = convertToDTOs(data)
         return entities
     }
 

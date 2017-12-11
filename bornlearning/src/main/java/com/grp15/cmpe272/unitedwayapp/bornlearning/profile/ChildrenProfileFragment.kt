@@ -35,7 +35,7 @@ class ChildrenProfileFragment : Fragment() {
 
     private lateinit var childrenCustomAdapter: ChildrenCustomAdapter
 
-    private var developmentType: String? = null
+    private var developmentType: Constants.DevelopmentType? = null
 
     private lateinit var listView: ListView
 
@@ -45,7 +45,7 @@ class ChildrenProfileFragment : Fragment() {
         var view = inflater.inflate(R.layout.fragment_children_profile, container, false)
 
         // get development type
-        developmentType = activity?.intent?.getStringExtra(Constants.DEVELOPMENT_TYPE)
+        developmentType = activity?.intent?.getSerializableExtra(Constants.DEVELOPMENT_TYPE) as Constants.DevelopmentType
 
         // take the selectedCenter from intent
         selectedCenter = activity?.intent?.getSerializableExtra(Center::class.simpleName) as Center
@@ -89,9 +89,9 @@ class ChildrenProfileFragment : Fragment() {
     /**
      * Take assessment based on the selected development.
      */
-    fun takeAssessment(view: View, developmentType: String, child: Child) {
+    fun takeAssessment(view: View, developmentType: Constants.DevelopmentType, child: Child) {
         var intent = Intent()
-        when(developmentType) {
+        when(developmentType.name) {
             Constants.DevelopmentType.SCHOOL_READINESS.name ->
                 intent = Intent(this.activity, SchoolReadinessActivity::class.java)
             Constants.DevelopmentType.INFRASTRUCTURE.name ->
@@ -103,6 +103,7 @@ class ChildrenProfileFragment : Fragment() {
         }
         intent.putExtra(Center::class.simpleName, selectedCenter as Serializable)
         intent.putExtra(Child::class.simpleName, child as Serializable)
+        intent.putExtra(Constants.DEVELOPMENT_TYPE, developmentType)
         Toast.makeText(this.activity, "Taking assessment", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }

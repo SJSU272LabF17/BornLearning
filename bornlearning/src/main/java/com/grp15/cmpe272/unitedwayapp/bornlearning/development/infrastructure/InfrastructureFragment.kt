@@ -25,6 +25,8 @@ class InfrastructureFragment : Fragment() {
 
     private var selectedChild: Child? = null
 
+    private lateinit var selectedCategory: Constants.DevelopmentType
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -34,6 +36,8 @@ class InfrastructureFragment : Fragment() {
         // take the selectedCenter & selectedChild from intent
         selectedChild = activity?.intent?.getSerializableExtra(Child::class.simpleName) as Child
         selectedCenter = activity?.intent?.getSerializableExtra(Center::class.simpleName) as Center
+        selectedCategory = activity?.intent?.getSerializableExtra(Constants.DEVELOPMENT_TYPE) as Constants.DevelopmentType
+
 
         val buildingInfrastruvtureButton : Button = view.findViewById(R.id.button_building_infrastracture)
         buildingInfrastruvtureButton.setOnClickListener {
@@ -64,6 +68,8 @@ class InfrastructureFragment : Fragment() {
         }
         intent.putExtra(Center::class.simpleName, selectedCenter)
         intent.putExtra(Child::class.simpleName, selectedChild)
+        intent.putExtra(Constants.DEVELOPMENT_TYPE, selectedCategory)
+
         startActivity(intent)
     }
 
