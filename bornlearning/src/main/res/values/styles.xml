@@ -38,7 +38,13 @@
 
     <style name="BornLearningRegularTextStyle">
         <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:textSize">12pt</item>
+        <item name="android:textSize">@dimen/small_general</item>
     </style>
+
+    <style name="BornLearningRadioButtonStyle" parent="@android:style/Widget.Holo.CompoundButton.RadioButton">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/small_general</item>
+        <item name="android:buttonTint">@color/colorAccent</item>
+        </style>
 
 </resources>

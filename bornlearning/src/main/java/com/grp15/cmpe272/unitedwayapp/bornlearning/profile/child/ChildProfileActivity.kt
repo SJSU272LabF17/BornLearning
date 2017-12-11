@@ -24,8 +24,8 @@ class ChildProfileActivity : AppCompatActivity() {
         if (findViewById<FrameLayout>(R.id.framelayout_child_profile_fragment_container) != null) {
             //val intent : Intent = getIntent()
             when (intent.extras.getString(SELECT_ACTION)) {
-                ADD_CHILD_PROFILE -> currentFragment = AddUpdateChildProfileFragment()
-                EDIT_CHILD_PROFILE -> currentFragment = AddUpdateChildProfileFragment()
+                ADD_CHILD_PROFILE -> currentFragment = UpsertChildProfileFragment()
+                EDIT_CHILD_PROFILE -> currentFragment = UpsertChildProfileFragment()
                 else -> currentFragment = ViewChildProfileFragment()
             }
 

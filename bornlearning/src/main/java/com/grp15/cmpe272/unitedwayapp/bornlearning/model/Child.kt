@@ -31,5 +31,4 @@ data class Child(
 
         var age: Int? = null
 
-) : Serializable {
-}
+) : Serializable

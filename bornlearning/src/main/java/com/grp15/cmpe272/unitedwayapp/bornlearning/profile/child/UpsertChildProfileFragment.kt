@@ -23,15 +23,15 @@ import java.util.*
 
 
 /**
- * A simple [Fragment] subclass.
+ * This class is responsible of creating/updating a child profile.
  */
-class AddUpdateChildProfileFragment : Fragment() {
+class UpsertChildProfileFragment : Fragment() {
 
     companion object {
         val EXTRA_REQUEST_UPDATE = "EXTRA_REQUEST_UPDATE"
     }
 
-    private val TAG = AddUpdateChildProfileFragment::javaClass.name
+    private val TAG = UpsertChildProfileFragment::class.simpleName
 
     private var selectedCenter: Center? = null
 
@@ -45,13 +45,13 @@ class AddUpdateChildProfileFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_add_update_child_profile, container, false)
+        val view = inflater.inflate(R.layout.fragment_upsert_child_profile, container, false)
 
         if (activity?.intent!!.hasExtra(EXTRA_REQUEST_UPDATE)) {
             childToUpdate = activity?.intent?.getSerializableExtra(EXTRA_REQUEST_UPDATE) as Child
         }
         if (childToUpdate == null) {
-            selectedCenter = activity?.intent?.getSerializableExtra(Center::javaClass.name) as Center
+            selectedCenter = activity?.intent?.getSerializableExtra(Center::class.simpleName) as Center
             selectedCenterId = selectedCenter!!.centerId
         } else {
             isUpdating = true

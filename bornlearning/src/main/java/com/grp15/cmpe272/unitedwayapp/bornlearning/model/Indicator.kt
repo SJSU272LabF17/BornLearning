@@ -12,11 +12,10 @@ data class Indicator(
 
         var indicatorLabel: String,
 
-        var category: Int,
+        var category: String,
 
         var subCategory: String? = null,
 
         var ageGroup: String
 
-) : Serializable {
-}
+) : Serializable

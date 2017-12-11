@@ -4,12 +4,8 @@ import android.os.AsyncTask
 import android.util.Log
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
-import com.github.kittinunf.fuel.Fuel
-import com.github.kittinunf.fuel.core.HttpException
 import com.github.kittinunf.fuel.httpPost
 import com.github.kittinunf.result.Result
-import com.github.kittinunf.result.getAs
-import com.squareup.moshi.Json
 
 /**
  * Created by vin on 12/9/17.

@@ -40,7 +40,7 @@ class MainFragment : Fragment() {
         val viewHistory : Button = view.findViewById(R.id.button_main_view_history)
         viewHistory.setOnClickListener { viewHistory(it) }
 
-        facilitator = activity?.intent?.getSerializableExtra(Facilitator::javaClass.name) as Facilitator
+        facilitator = activity?.intent?.getSerializableExtra(Facilitator::class.simpleName) as Facilitator
 
         val facilitatorTextView: TextView = view.findViewById(R.id.text_main_facilitator_id)
         facilitatorTextView.text = facilitator.name
@@ -56,7 +56,7 @@ class MainFragment : Fragment() {
         if (selectedCenter == null) {
             Toast.makeText(this.activity, "No Center is selected.", Toast.LENGTH_SHORT).show()
         } else {
-            intent.putExtra(Center::javaClass.name, selectedCenter as Serializable)
+            intent.putExtra(Center::class.simpleName, selectedCenter as Serializable)
             Toast.makeText(this.activity, "Take Assessment", Toast.LENGTH_SHORT).show()
             startActivity(intent)
         }

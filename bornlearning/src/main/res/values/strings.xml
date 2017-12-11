@@ -59,6 +59,11 @@
     <string name="enter_facilitator_id">Enter Facilitator ID</string>
 
     <!-- Question implementation -->
+    <string name="textview_indicator_1">1. Disagree</string>
+    <string name="textview_indicator_2">2. Neutral</string>
+    <string name="textview_indicator_3">3. Agree</string>
 
+    <string name="textview_questions_center_title">Center:</string>
+    <string name="textview_questions_child_name_title">Child Name:</string>
 
 </resources>

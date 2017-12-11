@@ -19,6 +19,7 @@ import com.grp15.cmpe272.unitedwayapp.bornlearning.development.schoolreadiness.S
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Child
 import com.grp15.cmpe272.unitedwayapp.bornlearning.task.ChildGetListTask
+import java.io.Serializable
 
 
 /**
@@ -47,7 +48,7 @@ class ChildrenProfileFragment : Fragment() {
         developmentType = activity?.intent?.getStringExtra(Constants.DEVELOPMENT_TYPE)
 
         // take the selectedCenter from intent
-        selectedCenter = activity?.intent?.getSerializableExtra(Center::javaClass.name) as Center
+        selectedCenter = activity?.intent?.getSerializableExtra(Center::class.simpleName) as Center
 
         var centerTextView: TextView = view.findViewById(R.id.textview_children_profile_center_name_value)
         centerTextView.text = selectedCenter.centerName
@@ -100,8 +101,8 @@ class ChildrenProfileFragment : Fragment() {
                 // goes directly to the question view
                 intent = Intent(this.activity, QuestionImplementationActivity::class.java)
         }
-        intent.putExtra(Child::javaClass.name, child)
-        intent.putExtra(Center::javaClass.name, selectedCenter)
+        intent.putExtra(Center::class.simpleName, selectedCenter as Serializable)
+        intent.putExtra(Child::class.simpleName, child as Serializable)
         Toast.makeText(this.activity, "Taking assessment", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }

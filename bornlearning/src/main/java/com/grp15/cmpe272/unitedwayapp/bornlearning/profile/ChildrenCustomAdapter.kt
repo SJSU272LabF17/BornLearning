@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Child
-import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.child.AddUpdateChildProfileFragment
+import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.child.UpsertChildProfileFragment
 import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.child.ChildProfileActivity
 
 /**
@@ -25,7 +25,7 @@ class ChildrenCustomAdapter(var context: Context, private var children: ArrayLis
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        var view = convertView ?: inflater?.inflate(R.layout.listview_row_children, parent, false)
+        val view = convertView ?: inflater?.inflate(R.layout.listview_row_children, parent, false)
 
         val childNameTextView: TextView? = view?.findViewById(R.id.textview_row_child_name)
         val childAgeTextView: TextView? = view?.findViewById(R.id.textview_row_child_age)
@@ -45,7 +45,7 @@ class ChildrenCustomAdapter(var context: Context, private var children: ArrayLis
 
     private fun editChild(view: View, child: Child) {
         val intent = Intent(context, ChildProfileActivity::class.java)
-        intent.putExtra(AddUpdateChildProfileFragment.EXTRA_REQUEST_UPDATE, child)
+        intent.putExtra(UpsertChildProfileFragment.EXTRA_REQUEST_UPDATE, child)
         intent.putExtra(ChildProfileActivity.SELECT_ACTION, ChildProfileActivity.EDIT_CHILD_PROFILE)
         context.startActivity(intent)
     }

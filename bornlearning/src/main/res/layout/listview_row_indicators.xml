@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00000000">
+
+    <TextView
+        android:id="@+id/textview_row_indicator_desc"
+        style="@style/BornLearningRegularTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/between_buttons_margin"
+        android:text="Indicator description"
+        />
+
+    <include
+        android:id="@+id/radiogroup_row_indicators"
+        layout="@layout/radiogroup_indicators"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</LinearLayout>

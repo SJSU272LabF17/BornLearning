@@ -41,7 +41,7 @@ class DevelopmentFragment : Fragment() {
         val communityReadinessButton : Button = view.findViewById(R.id.button_community_readiness)
         communityReadinessButton.setOnClickListener{ openCommunityReadinessCategory(it) }
 
-        selectedCenter = activity?.intent?.getSerializableExtra(Center::javaClass.name) as Center
+        selectedCenter = activity?.intent?.getSerializableExtra(Center::class.simpleName) as Center
 
         initializeTextViews(view)
 
@@ -64,21 +64,21 @@ class DevelopmentFragment : Fragment() {
     fun openSchoolReadiness(view : View) {
         val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
         intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.SCHOOL_READINESS.name)
-        intent.putExtra(Center::javaClass.name, selectedCenter as Serializable)
+        intent.putExtra(Center::class.simpleName, selectedCenter as Serializable)
         startActivity(intent)
     }
 
     fun openInfrastructureCategory(view : View) {
         val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
         intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.INFRASTRUCTURE.name)
-        intent.putExtra(Center::javaClass.name, selectedCenter as Serializable)
+        intent.putExtra(Center::class.simpleName, selectedCenter as Serializable)
         startActivity(intent)
     }
 
     fun openCommunityReadinessCategory(view : View) {
         val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
         intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.COMMUNITY_READINESS.name)
-        intent.putExtra(Center::javaClass.name, selectedCenter as Serializable)
+        intent.putExtra(Center::class.simpleName, selectedCenter as Serializable)
         startActivity(intent)
     }
 

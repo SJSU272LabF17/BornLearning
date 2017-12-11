@@ -13,7 +13,7 @@ class FacilitatorGetTask : RestGetTask<Facilitator>() {
         val GET_FACILITATOR_BY_ID: String? = GlobalProperties.properties.getProperty(GlobalProperties.GET_FACILITATOR_BY_ID_API_KEY)
     }
 
-    override fun convertToDTO(data: String):Facilitator {
+    override fun convertToDTO(data: String): Facilitator {
         return mapper.readValue(data)
     }
 }

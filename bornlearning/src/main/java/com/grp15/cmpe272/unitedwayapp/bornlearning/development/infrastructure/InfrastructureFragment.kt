@@ -8,8 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.grp15.cmpe272.unitedwayapp.bornlearning.Constants
 
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
+import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
+import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Child
 import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.QuestionImplementationActivity
 
 
@@ -18,20 +21,34 @@ import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.QuestionImplementatio
  */
 class InfrastructureFragment : Fragment() {
 
+    private var selectedCenter: Center? = null
+
+    private var selectedChild: Child? = null
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        var view = inflater.inflate(R.layout.fragment_infrastructure, container, false)
+        val view = inflater.inflate(R.layout.fragment_infrastructure, container, false)
 
-        var CognitiveButton : Button = view.findViewById(R.id.button_building_infrastracture)
-        CognitiveButton.setOnClickListener{ openChildrenProfile(it) }
+        // take the selectedCenter & selectedChild from intent
+        selectedChild = activity?.intent?.getSerializableExtra(Child::class.simpleName) as Child
+        selectedCenter = activity?.intent?.getSerializableExtra(Center::class.simpleName) as Center
 
-        var movementAndPhysicalDevelopmentButton : Button = view.findViewById(R.id.button_portable_infrastructure)
-        movementAndPhysicalDevelopmentButton.setOnClickListener{ openChildrenProfile(it) }
+        val buildingInfrastruvtureButton : Button = view.findViewById(R.id.button_building_infrastracture)
+        buildingInfrastruvtureButton.setOnClickListener {
+            openChildrenProfile(it, Constants.SubcategoryType.BUILDING_INFRASTRUCTURE.type)
+        }
 
-        var PhysicalWellbeingButton : Button = view.findViewById(R.id.button_educational_materials)
-        PhysicalWellbeingButton.setOnClickListener{ openChildrenProfile(it) }
+        val portableInfrastructureButton : Button = view.findViewById(R.id.button_portable_infrastructure)
+        portableInfrastructureButton.setOnClickListener {
+            openChildrenProfile(it, Constants.SubcategoryType.PORTABLE_INFRASTRUCTURE.type)
+        }
+
+        val educationalMaterialsButton : Button = view.findViewById(R.id.button_educational_materials)
+        educationalMaterialsButton.setOnClickListener {
+            openChildrenProfile(it, Constants.SubcategoryType.EDUCATIONAL_MATERIAL.type)
+        }
 
         // Inflate the layout for this fragment
         return view;
@@ -40,8 +57,13 @@ class InfrastructureFragment : Fragment() {
     /**
      * This method is invoked by all buttons, they just have varying data to pass via intent.
      */
-    fun openChildrenProfile(view : View) {
+    fun openChildrenProfile(view : View, subCategory: String?) {
         val intent = Intent(this.activity, QuestionImplementationActivity::class.java)
+        if (subCategory != null) {
+            intent.putExtra(Constants.SUBCATEGORY_TYPE, subCategory)
+        }
+        intent.putExtra(Center::class.simpleName, selectedCenter)
+        intent.putExtra(Child::class.simpleName, selectedChild)
         startActivity(intent)
     }
 
