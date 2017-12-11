@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/listview_row_border">
+
+    <TextView
+        android:id="@+id/textview_row_indicator_edittext_desc"
+        style="@style/BornLearningRegularTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/between_buttons_margin"
+        android:text="Indicator description"
+        />
+
+    <EditText
+        android:id="@+id/edit_text_row_indicator_value"
+        style="@style/BornLearningRegularTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:focusableInTouchMode="true"
+        android:hint="@string/edittext_indicator_hint"
+        />
+
+</LinearLayout>

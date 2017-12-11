@@ -2,7 +2,6 @@ package com.grp15.cmpe272.unitedwayapp.bornlearning.profile
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -71,19 +70,27 @@ class QuestionImplementationFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        getIndicators()
+        getQuestionsWithFixedIndicators()
         // setup listview
-        questionCustomAdapter = QuestionCustomAdapter(activity!!.applicationContext, ArrayList(indicators), responses)
+        if (selectedCategory != Constants.DevelopmentType.SCHOOL_READINESS) {
+            questionCustomAdapter = QuestionNonFixedCustomAdapter(activity!!.applicationContext, ArrayList(indicators), responses)
+        } else {
+            questionCustomAdapter = QuestionFixedResponseCustomAdapter(activity!!.applicationContext, ArrayList(indicators), responses)
+        }
         listView.adapter = questionCustomAdapter
 
     }
 
-    private fun getIndicators() {
+    private fun getQuestionsWithFixedIndicators() {
         val getIndicatorsTask = IndicatorGetListTask()
         if (selectedSubCategory == null) {
             Toast.makeText(activity, "Subcategory cannot be empty", Toast.LENGTH_SHORT).show()
         } else {
-            getIndicatorsTask.execute(selectedSubCategory, selectedChild.age.toString())
+            if (selectedCategory != Constants.DevelopmentType.SCHOOL_READINESS) {
+                getIndicatorsTask.execute(selectedSubCategory, 0.toString()) // hack to put ageGroup=0
+            } else {
+                getIndicatorsTask.execute(selectedSubCategory, selectedChild.age.toString())
+            }
             indicators = getIndicatorsTask.get()?.toMutableList()
             indicators?.forEach{indicator ->
                 val response = Response (
