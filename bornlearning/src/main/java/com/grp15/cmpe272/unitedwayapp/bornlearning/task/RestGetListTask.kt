@@ -12,7 +12,7 @@ import com.grp15.cmpe272.unitedwayapp.bornlearning.util.GlobalProperties
 abstract class RestGetListTask<T>: AsyncTask<String, Void, MutableList<T>>() {
 
     companion object {
-        val READ_TIMOUT_MS = GlobalProperties.properties.getProperty(GlobalProperties.READ_TIMEOUT_MILLIS).toInt()
+        val READ_TIMEOUT_MS = GlobalProperties.properties.getProperty(GlobalProperties.READ_TIMEOUT_MILLIS).toInt()
     }
 
     var mapper = ObjectMapper().registerKotlinModule()
@@ -20,7 +20,7 @@ abstract class RestGetListTask<T>: AsyncTask<String, Void, MutableList<T>>() {
     private fun getEntitiesRaw(url: String): MutableList<T>? {
 
         val entities: MutableList<T>
-        val (request, response, result) = url.httpGet().timeoutRead(READ_TIMOUT_MS).responseString()
+        val (request, response, result) = url.httpGet().timeoutRead(READ_TIMEOUT_MS).responseString()
         if (response.statusCode >= 400) {
             return null
         }

@@ -56,7 +56,7 @@ class LoginFragment : Fragment() {
             if (facilitator == null) {
                 Toast.makeText(context, "Unable to find facilitator: ${id.text}", Toast.LENGTH_SHORT).show()
             } else {
-                intent.putExtra(Facilitator::javaClass.name, facilitator as Serializable)
+                intent.putExtra(Facilitator::class.simpleName, facilitator as Serializable)
                 Toast.makeText(this.activity, "Logging in: " + id.text, Toast.LENGTH_SHORT).show()
                 startActivity(intent)
             }

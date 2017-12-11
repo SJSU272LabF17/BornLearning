@@ -1,0 +1,206 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:layout="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bornLearningMain"
+    tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.profile.child.UpsertChildProfileFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageview_add_child_born_learning_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/born_learning_banner"/>
+
+        <LinearLayout
+            android:id="@+id/linearlayout_add_child_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/between_buttons_margin">
+
+            <TextView
+                android:id="@+id/textview_add_child_id"
+                style="@style/BornLearningHeaderSmallStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:gravity="start|center"
+                android:layout_weight="2"
+                android:text="@string/add_child_id"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_child_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayout_add_child_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/between_buttons_margin">
+
+            <TextView
+                android:id="@+id/textview_add_child_first_name"
+                style="@style/BornLearningHeaderSmallStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:gravity="start|center"
+                android:layout_weight="2"
+                android:text="@string/add_child_first_name"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_child_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayout_add_child_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/between_buttons_margin">
+
+            <TextView
+                android:id="@+id/textview_add_child_last_name"
+                style="@style/BornLearningHeaderSmallStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:gravity="start|center"
+                android:layout_weight="2"
+                android:text="@string/add_child_last_name"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_child_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayout_add_child_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/between_buttons_margin">
+
+            <TextView
+                android:id="@+id/textview_add_child_dob"
+                style="@style/BornLearningHeaderSmallStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:gravity="start|center"
+                android:layout_weight="2"
+                android:text="@string/add_child_dob"/>
+
+            <DatePicker
+                android:id="@+id/datepicker_add_child_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"
+                android:layout_weight="1">
+            </DatePicker>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearlayout_add_child_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/between_buttons_margin">
+
+            <TextView
+                android:id="@+id/textview_add_child_gender"
+                style="@style/BornLearningHeaderSmallStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:gravity="start|center"
+                android:layout_weight="2"
+                android:text="@string/add_child_gender"/>
+
+            <include
+                layout="@layout/radiogroup_gender"
+                android:id="@+id/radiogroup_add_child_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayout_add_child_guardian_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/between_buttons_margin">
+
+            <TextView
+                android:id="@+id/textview_add_child_guardian_name"
+                style="@style/BornLearningHeaderSmallStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:gravity="start|center"
+                android:layout_weight="2"
+                android:text="@string/add_child_guardian_name"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_child_guardian_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayout_add_child_guardian_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/between_buttons_margin">
+
+            <TextView
+                android:id="@+id/textview_add_child_guardian_phone"
+                style="@style/BornLearningHeaderSmallStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:gravity="start|center"
+                android:layout_weight="2"
+                android:text="@string/add_child_guardian_phone"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_child_guardian_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_add_child_submit"
+            style="@style/BornLearningButtonStyle"
+            android:layout_marginBottom="@dimen/between_buttons_margin"
+            android:text="@string/submit"/>
+
+    </LinearLayout>
+
+</ScrollView>

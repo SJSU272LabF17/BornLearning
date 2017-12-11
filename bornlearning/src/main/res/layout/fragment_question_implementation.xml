@@ -7,43 +7,71 @@
     android:background="@color/bornLearningMain"
     tools:context="com.grp15.cmpe272.unitedwayapp.bornlearning.profile.QuestionImplementationFragment">
 
-    <TextView
-        android:id="@+id/center_name"
+    <ImageView
+        android:id="@+id/imageview_questions_born_learning_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:text="Center Name: "
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/child_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:adjustViewBounds="true"
+        android:src="@drawable/born_learning_banner"/>
 
-    <TextView
-        android:id="@+id/child_name"
+    <LinearLayout
+        android:id="@+id/linearlayout_center_info"
+        app:layout_constraintTop_toBottomOf="@id/imageview_questions_born_learning_banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="50dp"
-        android:text="Child Name: "
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/center_name"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="@dimen/between_items_margin_small"
+        android:orientation="horizontal">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/linearlayout_question_implementation"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/between_buttons_margin"
-        android:orientation="horizontal"
-        android:gravity="center">
+        <TextView
+            style="@style/BornLearningHeaderSmallStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textview_questions_center_title"
+            />
 
-        <!-- Include other widget or layout tags here. These are considered
-                "child views" or "children" of the linear layout -->
+        <TextView
+            android:id="@+id/textview_questions_center_name"
+            style="@style/BornLearningHeaderSmallStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PLACEHOLDER"/>
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearlayout_child_info"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout_center_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/between_items_margin_small"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/BornLearningHeaderSmallStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textview_questions_child_name_title"
+            />
+
+        <TextView
+            android:id="@+id/textview_questions_child_name"
+            style="@style/BornLearningHeaderSmallStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PLACEHOLDER"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview_questions"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout_child_info"
+        app:layout_constraintBottom_toTopOf="@+id/button_question_implementation_submit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/between_items_margin_small"
+        android:cacheColorHint="#00000000">
+    </ListView>
 
     <Button
         android:id="@+id/button_question_implementation_submit"

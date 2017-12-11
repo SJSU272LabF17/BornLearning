@@ -30,5 +30,4 @@ data class Center(
     var facilitatorId: Int,
 
     var geoLocation: String? = null
-) : Serializable {
-}
+) : Serializable

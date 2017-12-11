@@ -16,7 +16,7 @@ class ChildrenProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_children_profile)
-        selectedCenter = intent?.getSerializableExtra(Center::javaClass.name) as Center
+        selectedCenter = intent?.getSerializableExtra(Center::class.simpleName) as Center
 
     }
 
@@ -40,7 +40,7 @@ class ChildrenProfileActivity : AppCompatActivity() {
     private fun addChildProfile() : Boolean {
         val intent = Intent(this, ChildProfileActivity::class.java)
         intent.putExtra(ChildProfileActivity.SELECT_ACTION, ChildProfileActivity.ADD_CHILD_PROFILE)
-        intent.putExtra(Center::javaClass.name, selectedCenter)
+        intent.putExtra(Center::class.simpleName, selectedCenter)
         startActivity(intent)
         return true
     }

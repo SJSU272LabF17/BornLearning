@@ -6,6 +6,7 @@
 
     <!-- main -->
     <dimen name="between_buttons_margin">20dp</dimen>
+    <dimen name="between_items_margin_small">10dp</dimen>
 
     <!-- text -->
     <dimen name="small_general">12sp</dimen>

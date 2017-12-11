@@ -8,10 +8,10 @@ import com.grp15.cmpe272.unitedwayapp.bornlearning.util.GlobalProperties
  */
 class ChildPostTask: RestPostTask<Child>() {
     companion object {
-        val ADD_CHILD_ENDPOINT = GlobalProperties.properties.getProperty(GlobalProperties.POST_ADD_CHILD_API)
+        val ADD_CHILD_ENDPOINT: String? = GlobalProperties.properties.getProperty(GlobalProperties.POST_ADD_CHILD_API)
     }
 
     override fun getUrl(): String {
-        return ADD_CHILD_ENDPOINT
+        return ADD_CHILD_ENDPOINT!!
     }
 }
