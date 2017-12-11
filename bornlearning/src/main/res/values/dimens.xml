@@ -9,8 +9,8 @@
     <dimen name="between_items_margin_small">10dp</dimen>
 
     <!-- text -->
-    <dimen name="small_general">12sp</dimen>
-    <dimen name="medium_general">14sp</dimen>
+    <dimen name="small_general">14sp</dimen>
+    <dimen name="medium_general">16sp</dimen>
     <dimen name="large_general">18sp</dimen>
 
     <dimen name="headers_font_size">36sp</dimen>

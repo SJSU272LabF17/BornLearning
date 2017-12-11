@@ -10,11 +10,13 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Indicator
+import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Response
 
 /**
  * Created by vin on 12/10/17.
  */
-class QuestionCustomAdapter(var context: Context, private var indicators: List<Indicator>)
+class QuestionCustomAdapter(var context: Context, private var indicators: List<Indicator>,
+                            private var responses: MutableList<Response>)
             : BaseAdapter() {
 
     private var inflater: LayoutInflater? = null
@@ -30,17 +32,23 @@ class QuestionCustomAdapter(var context: Context, private var indicators: List<I
         val indicatorDescTextView: TextView? = view?.findViewById(R.id.textview_row_indicator_desc)
         indicatorDescTextView?.text = indicators[position].indicatorLabel
 
-        val indicatorRadioButton1: RadioButton? = view?.findViewById(R.id.radiobutton_indicator_1)
-        indicatorRadioButton1?.setOnClickListener { buttonOnClick(it, position, indicatorRadioButton1.id) }
-
-        val indicatorRadioButton2: RadioButton? = view?.findViewById(R.id.radiobutton_indicator_2)
-        indicatorRadioButton2?.setOnClickListener { buttonOnClick(it, position, indicatorRadioButton2.id) }
-
-        val indicatorRadioButton3: RadioButton? = view?.findViewById(R.id.radiobutton_indicator_3)
-        indicatorRadioButton3?.setOnClickListener { buttonOnClick(it, position, indicatorRadioButton3.id) }
-
         val indicatorRadioGroup: RadioGroup? = view?.findViewById(R.id.radiogroup_row_indicators)
         indicatorRadioGroup?.clearCheck()
+
+        val indicatorRadioButton1: RadioButton? = view?.findViewById(R.id.radiobutton_indicator_1)
+        indicatorRadioButton1?.setOnClickListener {
+            buttonOnClick(it, position, indicatorRadioButton1.id, indicatorRadioGroup!!.indexOfChild(indicatorRadioButton1))
+        }
+
+        val indicatorRadioButton2: RadioButton? = view?.findViewById(R.id.radiobutton_indicator_2)
+        indicatorRadioButton2?.setOnClickListener {
+            buttonOnClick(it, position, indicatorRadioButton2.id, indicatorRadioGroup!!.indexOfChild(indicatorRadioButton2))
+        }
+
+        val indicatorRadioButton3: RadioButton? = view?.findViewById(R.id.radiobutton_indicator_3)
+        indicatorRadioButton3?.setOnClickListener {
+            buttonOnClick(it, position, indicatorRadioButton3.id, indicatorRadioGroup!!.indexOfChild(indicatorRadioButton3))
+        }
 
         checkedIndicators.forEach{k, v -> if (position == k) {
             indicatorRadioGroup?.check(v)
@@ -50,8 +58,13 @@ class QuestionCustomAdapter(var context: Context, private var indicators: List<I
         return view!!
     }
 
-    private fun buttonOnClick(view: View, position: Int, buttonId: Int) {
+    private fun buttonOnClick(view: View, position: Int, buttonId: Int, buttonIndex: Int) {
         checkedIndicators.put(position, buttonId)
+        responses[position].response = buttonIndex + 1
+    }
+
+    fun getFilledResponses(): MutableList<Response> {
+        return responses
     }
 
     override fun getItem(position: Int): Any {

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="#00000000">
+    android:background="@drawable/listview_row_border"
+    >
 
         <TextView
             android:id="@+id/textview_row_child_name"

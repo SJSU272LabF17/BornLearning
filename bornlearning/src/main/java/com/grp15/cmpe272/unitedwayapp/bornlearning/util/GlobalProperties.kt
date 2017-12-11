@@ -22,6 +22,8 @@ object GlobalProperties {
     val PUT_UPDATE_CHILD_API = "putUpdateChildAPI"
     val GET_INDICATORS_API = "getIndicatorsAPI"
     val POST_SCHOOL_READINESS_API = "postSchoolReadinessAPI"
+    val POST_INFRASTRUCTURE_DEV_API = "postInsfrastructureDevAPI"
+    val POST_COMMUNITY_READINESS_API = "postCommunityReadinessAPI"
 
     val READ_TIMEOUT_MILLIS = "readTimeoutInMillis"
 

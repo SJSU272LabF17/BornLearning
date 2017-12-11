@@ -19,11 +19,12 @@ abstract class RestPostTask<T>: AsyncTask<T, Void, Boolean>() {
     abstract fun getUrl(): String
 
     private fun getEntity(body: T): Boolean? {
-        var bodyToJsonString = mapper.writeValueAsString(body)
+        val bodyToJsonString = mapper.writeValueAsString(body)
         Log.i(TAG,"Body: " + bodyToJsonString)
         val request = getUrl().httpPost().body(bodyToJsonString)
         request.headers["Content-Type"] = "application/json"
 
+        Log.i(TAG, "Request: " + request.cUrlString())
         var isSuccessful = true
         request.response {
             request, response, result ->
