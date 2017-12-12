@@ -12,6 +12,7 @@ import android.widget.TextView
 import com.grp15.cmpe272.unitedwayapp.bornlearning.Constants
 
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
+import com.grp15.cmpe272.unitedwayapp.bornlearning.development.infrastructure.InfrastructureActivity
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
 import com.grp15.cmpe272.unitedwayapp.bornlearning.profile.ChildrenProfileActivity
 import java.io.Serializable
@@ -69,7 +70,8 @@ class DevelopmentFragment : Fragment() {
     }
 
     fun openInfrastructureCategory(view : View) {
-        val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
+        //val intent = Intent(this.activity, ChildrenProfileActivity::class.java)
+        val intent = Intent(this.activity, InfrastructureActivity::class.java)
         intent.putExtra(Constants.DEVELOPMENT_TYPE, Constants.DevelopmentType.INFRASTRUCTURE)
         intent.putExtra(Center::class.simpleName, selectedCenter as Serializable)
         startActivity(intent)

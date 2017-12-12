@@ -9,8 +9,10 @@ import android.widget.*
 import com.grp15.cmpe272.unitedwayapp.bornlearning.Constants
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Center
+import com.grp15.cmpe272.unitedwayapp.bornlearning.model.CenterSourceResponse
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Child
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Indicator
+import com.grp15.cmpe272.unitedwayapp.bornlearning.model.ChildSourceResponse
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Response
 import com.grp15.cmpe272.unitedwayapp.bornlearning.task.IndicatorGetListTask
 import com.grp15.cmpe272.unitedwayapp.bornlearning.task.ResponsePostListTask
@@ -36,7 +38,7 @@ class QuestionImplementationFragment : Fragment() {
 
     private var indicators: MutableList<Indicator>? = null
 
-    private var responses: MutableList<Response> = mutableListOf()
+    private var response: MutableList<Response> = mutableListOf()
 
     private lateinit var questionCustomAdapter: QuestionCustomAdapter
 
@@ -60,7 +62,14 @@ class QuestionImplementationFragment : Fragment() {
 
         val childNameTextView: TextView = view.findViewById(R.id.textview_questions_child_name)
         val childFullName = selectedChild.childFName + " " + selectedChild.childLName
-        childNameTextView.text = childFullName
+
+        if (selectedChild.age == 0) {
+            val childNameTitleTextView: TextView = view.findViewById(R.id.textview_questions_child_name_title)
+            childNameTitleTextView.visibility = View.INVISIBLE
+            childNameTextView.visibility = View.INVISIBLE
+        } else {
+            childNameTextView.text = childFullName
+        }
 
         listView = view.findViewById(R.id.listview_questions)
 
@@ -73,9 +82,9 @@ class QuestionImplementationFragment : Fragment() {
         getQuestionsWithFixedIndicators()
         // setup listview
         if (selectedCategory != Constants.DevelopmentType.SCHOOL_READINESS) {
-            questionCustomAdapter = QuestionNonFixedCustomAdapter(activity!!.applicationContext, ArrayList(indicators), responses)
+            questionCustomAdapter = QuestionNonFixedCustomAdapter(activity!!.applicationContext, ArrayList(indicators), response)
         } else {
-            questionCustomAdapter = QuestionFixedResponseCustomAdapter(activity!!.applicationContext, ArrayList(indicators), responses)
+            questionCustomAdapter = QuestionFixedResponseCustomAdapter(activity!!.applicationContext, ArrayList(indicators), response)
         }
         listView.adapter = questionCustomAdapter
 
@@ -92,14 +101,10 @@ class QuestionImplementationFragment : Fragment() {
                 getIndicatorsTask.execute(selectedSubCategory, selectedChild.age.toString())
             }
             indicators = getIndicatorsTask.get()?.toMutableList()
-            indicators?.forEach{indicator ->
-                val response = Response (
-                        indicatorID = indicator.indicatorID,
-                        childID = selectedChild.childID,
-                        response = -1,
-                        assessmentDate = Response.convertDateToString(Date())
-                )
-                responses.add(response)
+            if (selectedCategory == Constants.DevelopmentType.INFRASTRUCTURE) {
+                generateCenterSourceResponses()
+            } else {
+                generateChildSourceResponses()
             }
         }
         if (indicators == null) {
@@ -108,11 +113,40 @@ class QuestionImplementationFragment : Fragment() {
         }
     }
 
+    private fun generateCenterSourceResponses() {
+        indicators?.forEach{indicator ->
+            val response = CenterSourceResponse(
+                    indicatorID = indicator.indicatorID,
+                    centerId = selectedCenter.centerId,
+                    response = -1,
+                    assessmentDate = Response.convertDateToString(Date())
+            )
+            this.response.add(response)
+        }
+    }
+
+    private fun generateChildSourceResponses() {
+        indicators?.forEach{indicator ->
+            val response = ChildSourceResponse(
+                    indicatorID = indicator.indicatorID,
+                    childID = selectedChild.childID,
+                    response = -1,
+                    assessmentDate = Response.convertDateToString(Date())
+            )
+            this.response.add(response)
+        }
+    }
+
     private fun postResponses() {
         val postResponses = ResponsePostListTask(selectedCategory)
         val filledResponses = questionCustomAdapter.getFilledResponses()
         var isAllFilled = true
-        filledResponses.forEach {response -> if (response.response < 0) isAllFilled = false}
+        if (selectedCategory == Constants.DevelopmentType.INFRASTRUCTURE) {
+            filledResponses.forEach {response -> if ((response as CenterSourceResponse).response < 0) isAllFilled = false}
+        } else {
+            filledResponses.forEach {response -> if ((response as ChildSourceResponse).response < 0) isAllFilled = false}
+        }
+
         if (!isAllFilled) {
             Toast.makeText(activity, "All Questions need to be answered", Toast.LENGTH_SHORT).show()
         } else {

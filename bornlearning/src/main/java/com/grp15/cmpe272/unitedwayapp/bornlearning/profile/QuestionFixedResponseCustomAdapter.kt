@@ -9,6 +9,7 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Indicator
+import com.grp15.cmpe272.unitedwayapp.bornlearning.model.ChildSourceResponse
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Response
 
 /**
@@ -59,7 +60,7 @@ class QuestionFixedResponseCustomAdapter(var context: Context, private var indic
 
     private fun buttonOnClick(view: View, position: Int, buttonId: Int, buttonIndex: Int) {
         checkedIndicators.put(position, buttonId)
-        responses[position].response = buttonIndex + 1
+        (responses[position] as ChildSourceResponse).response = buttonIndex + 1
     }
 
     override fun getFilledResponses(): MutableList<Response> {
