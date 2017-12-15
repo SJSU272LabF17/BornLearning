@@ -23,7 +23,7 @@ class InfrastructureFragment : Fragment() {
 
     private var selectedCenter: Center? = null
 
-    private var selectedChild: Child? = null
+//    private var selectedChild: Child? = null
 
     private lateinit var selectedCategory: Constants.DevelopmentType
 
@@ -34,7 +34,7 @@ class InfrastructureFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_infrastructure, container, false)
 
         // take the selectedCenter & selectedChild from intent
-        selectedChild = activity?.intent?.getSerializableExtra(Child::class.simpleName) as Child
+//        selectedChild = activity?.intent?.getSerializableExtra(Child::class.simpleName) as Child
         selectedCenter = activity?.intent?.getSerializableExtra(Center::class.simpleName) as Center
         selectedCategory = activity?.intent?.getSerializableExtra(Constants.DEVELOPMENT_TYPE) as Constants.DevelopmentType
 
@@ -67,10 +67,25 @@ class InfrastructureFragment : Fragment() {
             intent.putExtra(Constants.SUBCATEGORY_TYPE, subCategory)
         }
         intent.putExtra(Center::class.simpleName, selectedCenter)
-        intent.putExtra(Child::class.simpleName, selectedChild)
+        intent.putExtra(Child::class.simpleName, createMockedChild())
         intent.putExtra(Constants.DEVELOPMENT_TYPE, selectedCategory)
 
         startActivity(intent)
+    }
+
+    // simple hack to pass a child with zero age.
+    private fun createMockedChild(): Child {
+        return Child(childID = 0,
+                childLName = "Placeholder",
+                childFName = "Placeholder",
+                active = "Y",
+                guardianName = "Placeholder",
+                guardianPhone = "111",
+                imageID = "",
+                gender = "M",
+                centerID = selectedCenter!!.centerId,
+                childDOB = "2099-12-12",
+                age = 0)
     }
 
 }// Required empty public constructor

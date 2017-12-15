@@ -48,6 +48,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/textview_questions_child_name_title"
             style="@style/BornLearningHeaderSmallStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

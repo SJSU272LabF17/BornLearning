@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
 import com.grp15.cmpe272.unitedwayapp.bornlearning.R
+import com.grp15.cmpe272.unitedwayapp.bornlearning.model.CenterSourceResponse
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Indicator
 import com.grp15.cmpe272.unitedwayapp.bornlearning.model.Response
 
@@ -76,7 +77,7 @@ class QuestionNonFixedCustomAdapter (var context: Context, private var indicator
 //
 //            override fun afterTextChanged(text: Editable) {
 //                if (!text.isBlank() || currentValue < 0){
-//                    responses[position].response = text.toString().toInt()
+//                    responses[position].responses = text.toString().toInt()
 //                }
 //            }
 //        })
@@ -88,9 +89,9 @@ class QuestionNonFixedCustomAdapter (var context: Context, private var indicator
                    val currentValueInString: String =  (view as EditText).text.toString()
                       if (currentValueInString.length > 0) {
                           val currentValue = currentValueInString.toInt()
-                          responses[position].response = currentValue
-                          cachedValues.put(position, responses[position].response)
-                          Log.i(TAG, "Saving:" + position + " : " + responses[position].response)
+                          (responses[position] as CenterSourceResponse).response = currentValue
+                          cachedValues.put(position, (responses[position] as CenterSourceResponse).response)
+                          Log.i(TAG, "Saving:" + position + " : " + (responses[position] as CenterSourceResponse).response)
                       }
                    }
                }
@@ -102,7 +103,7 @@ class QuestionNonFixedCustomAdapter (var context: Context, private var indicator
     }
 
 //    private fun onClickListener(view: View, position: Int) {
-//        cachedValues.put(position, responses[position].response)
+//        cachedValues.put(position, responses[position].responses)
 //    }
 
     override fun getFilledResponses(): MutableList<Response> {
@@ -124,7 +125,5 @@ class QuestionNonFixedCustomAdapter (var context: Context, private var indicator
     inner class CustomViewHolder(view: View,  var indicatorDescTextView: TextView,
                                  var indicatorValueEditText: EditText,
                                  var index: Int): RecyclerView.ViewHolder(view) {
-
-
     }
 }
